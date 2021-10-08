@@ -1,5 +1,5 @@
 import React from 'react';
-import TestAtom from './components/atoms/test-atom/test-atom';
+import TestAtom from './components/atoms/test-atom';
 
 const App = () =>  {
   return (

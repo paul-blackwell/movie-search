@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './test.module.scss';
+import styles from '../../styles/atoms/test.module.scss';
 
 const TestAtom = () => {
     return (
