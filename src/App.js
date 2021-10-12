@@ -1,5 +1,6 @@
 import React from 'react';
 import TestAtom from './components/atoms/test-atom';
+import './styles/main.scss';
 
 const App = () =>  {
   return (

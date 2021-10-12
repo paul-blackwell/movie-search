@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from '../../styles/atoms/test.module.scss';
+//import styles from '../../styles/atoms/test.module.scss';
 
 const TestAtom = () => {
     return (
-        <div className={styles.test}>
+        <div>
             I am a TestAtom
         </div>
     )
