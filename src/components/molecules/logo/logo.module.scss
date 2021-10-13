@@ -2,14 +2,16 @@
 
 .logo {
   display: flex;
-  margin: 0 1.25rem;
+  margin: 2rem 0;
 
   &__image {
       height: auto;
       width: 2rem;
+      margin-right: 0.5rem; 
   }
 
   &__text {
     @include text-2xl;
+    color: var(--blue-gray-800);
   }
 }

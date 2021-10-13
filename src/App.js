@@ -1,12 +1,12 @@
 import React from 'react';
-import Logo from './components/molecules/logo/logo'
 import './styles/main.scss';
+import Layout from './components/templates/layout/layout';
 
 const App = () =>  {
   return (
     <div className="App">
       <header className="App-header">
-      <Logo />
+        <Layout />
       </header>
     </div>
   );
