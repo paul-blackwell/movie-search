@@ -6,7 +6,7 @@ import Navbar from "../../organisms/navbar/navbar";
 const Layout = ({ children }) => (
   <div className={styles.layout}>
     <Navbar />
-    <main>{children}</main>
+    <main className={styles['layout__main']}>{children}</main>
   </div>
 );
 
