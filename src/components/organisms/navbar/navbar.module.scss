@@ -1,3 +1,17 @@
 .navbar {
     
+    &__top-container {
+        display: flex;
+        align-items: center;
+        background-color: var(--white);
+        padding: 1.2rem;
+        border-bottom: 0.125rem solid var(--blue-gray-100);
+    }
+
+    &__menu-icon {
+        fill: var(--blue-gray-500);
+        margin-left: auto;
+        height: 2rem;
+        width: 2rem;
+    }
 }
