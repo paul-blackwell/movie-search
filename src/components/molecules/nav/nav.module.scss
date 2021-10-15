@@ -1,0 +1,26 @@
+.nav {
+    height: calc(100vh - 2rem);
+    background-color: var(--white);
+
+    &__list {
+        padding-top: 1rem;
+    }
+
+    &__item {
+       padding: 0.75rem 0;
+    }
+
+    &__link {
+        display: flex;
+        margin-left: 1.25rem;
+        align-items: center;
+        color: var(--blue-gray-500);
+    }
+
+    &__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+        stroke: var(--blue-gray-500);
+    }
+}
