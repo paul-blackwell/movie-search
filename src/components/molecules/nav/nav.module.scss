@@ -1,5 +1,7 @@
 .nav {
-    height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 4.5rem);
     background-color: var(--white);
 
     &__list {

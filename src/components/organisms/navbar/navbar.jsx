@@ -20,7 +20,6 @@ const Navbar = () => {
       <div className={`${styles["navbar__bottom-container"]} ${openMobileMenu ? styles["navbar__bottom-container--show"] : styles["navbar__bottom-container--hide"]}`}>
         <Nav />
       </div>
-      <div></div>
     </div>
   );
 };

@@ -2,6 +2,7 @@
 import React from "react";
 import { FiCompass, FiHeart } from "react-icons/fi";
 import styles from "../nav/nav.module.scss";
+import CallToAction from "../callToAction/call-to-action";
 
 const Nav = () => {
   return (
@@ -20,6 +21,7 @@ const Nav = () => {
           </a>
         </li>
       </ul>
+      <CallToAction />
     </nav>
   );
 };

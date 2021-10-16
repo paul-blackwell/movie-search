@@ -1,0 +1,21 @@
+@import "../../../styles/abstracts/mixins";
+
+.call-to-action {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    background-color: var(--primary-50);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+
+    &__heading {
+        @include text-lg;
+        color: var(--primary-800);
+        margin-top: 1rem;
+    }
+
+    &__para {
+        @include text-base;
+        color: var(--primary-700);
+    }
+}
