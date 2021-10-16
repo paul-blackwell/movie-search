@@ -14,15 +14,16 @@
     &__link, &__link--active {
         display: flex;
         align-items: center;
-        color: var(--blue-gray-500);
     }
 
     &__link {
         padding-left: 1.25rem;
+        color: var(--blue-gray-500);
     }
 
     &__link--active {
         padding-left: 1rem;
+        color: var(--primary-500);
         border-left: 0.25rem solid  var(--primary-500);
     }
 

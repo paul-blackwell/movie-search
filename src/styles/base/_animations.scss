@@ -1,0 +1,29 @@
+@keyframes sideIn {
+    0% {
+      transform: translateX(100vw);
+    }
+  
+    80% {
+      transform: translateX(-5px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+@keyframes sideOut {
+    0% {
+      transform: translateX(0);
+    }
+  
+    80% {
+      transform: translateX(-5px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(100vw);
+    }
+}
