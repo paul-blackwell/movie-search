@@ -10,11 +10,24 @@
        padding: 0.75rem 0;
     }
 
-    &__link {
+
+    &__link, &__link--active {
         display: flex;
-        margin-left: 1.25rem;
         align-items: center;
         color: var(--blue-gray-500);
+    }
+
+    &__link {
+        padding-left: 1.25rem;
+    }
+
+    &__link--active {
+        padding-left: 1rem;
+        border-left: 0.25rem solid  var(--primary-500);
+    }
+
+    &__link--active &__icon {
+        stroke: var(--primary-500);
     }
 
     &__icon {

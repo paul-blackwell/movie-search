@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
-import { FiCompass } from "react-icons/fi";
+import React from "react";
+import { FiCompass, FiHeart } from "react-icons/fi";
 import styles from "../nav/nav.module.scss";
 
 const Nav = () => {
@@ -8,15 +8,15 @@ const Nav = () => {
     <nav className={styles.nav}>
       <ul className={styles["nav__list"]}>
         <li className={styles["nav__item"]}>
-          <a className={styles["nav__link"]} href="#">
+          <a className={styles["nav__link--active"]} href="#">
             <FiCompass className={styles["nav__icon"]} />
             Browse
           </a>
         </li>
         <li className={styles["nav__item"]}>
           <a className={styles["nav__link"]} href="#">
-            <FiCompass className={styles["nav__icon"]} />
-            Browse
+            <FiHeart className={styles["nav__icon"]} />
+            Favorites
           </a>
         </li>
       </ul>
