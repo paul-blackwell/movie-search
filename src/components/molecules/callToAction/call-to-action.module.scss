@@ -4,18 +4,25 @@
     display: flex;
     flex-direction: column;
     margin-top: auto;
+    margin-bottom: 1.25rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     background-color: var(--primary-50);
     border-radius: 1.5rem;
     padding: 1.5rem;
 
     &__heading {
-        @include text-lg;
+        align-self: center;
         color: var(--primary-800);
         margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        @include text-lg;
     }
 
     &__para {
-        @include text-base;
+        align-self: center;
         color: var(--primary-700);
+        margin-bottom: 2rem;
+        @include text-base;
     }
 }
