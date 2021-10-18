@@ -1,5 +1,7 @@
 .nav {
-    height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 4.5rem);
     background-color: var(--white);
 
     &__list {
@@ -10,11 +12,25 @@
        padding: 0.75rem 0;
     }
 
-    &__link {
+
+    &__link, &__link--active {
         display: flex;
-        margin-left: 1.25rem;
         align-items: center;
+    }
+
+    &__link {
+        padding-left: 1.25rem;
         color: var(--blue-gray-500);
+    }
+
+    &__link--active {
+        padding-left: 1rem;
+        color: var(--primary-500);
+        border-left: 0.25rem solid  var(--primary-500);
+    }
+
+    &__link--active &__icon {
+        stroke: var(--primary-500);
     }
 
     &__icon {

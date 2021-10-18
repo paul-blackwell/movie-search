@@ -7,16 +7,19 @@ import Nav from "../../molecules/nav/nav";
 const Navbar = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
+  const handleClick = () => {
+    setOpenMobileMenu(!openMobileMenu)
+  }
+
   return (
     <div className={styles.navbar}>
       <div className={styles["navbar__top-container"]}>
         <Logo />
-        <FiMenu className={styles["navbar__menu-icon"]} />
+        <FiMenu className={styles["navbar__menu-icon"]} onClick={handleClick} />
       </div>
-      <div className={styles["navbar__bottom-container"]}>
+      <div className={`${styles["navbar__bottom-container"]} ${openMobileMenu ? styles["navbar__bottom-container--show"] : styles["navbar__bottom-container--hide"]}`}>
         <Nav />
       </div>
-      <div></div>
     </div>
   );
 };

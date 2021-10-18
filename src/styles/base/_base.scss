@@ -14,11 +14,16 @@ html{
 body {
    background-color: var(--background);
    font-family: 'Roboto';
-   overflow-y: hidden;
+   overflow: hidden;
 }
 
 textarea:focus, input:focus{
     outline: none;
+}
+
+
+ul {
+    list-style: none;
 }
 
 a {
