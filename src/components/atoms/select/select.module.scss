@@ -1,0 +1,30 @@
+@import "../../../styles/abstracts/mixins";
+
+.select {
+  display: flex;
+  width: 100%;
+  @include text-base;
+  color: var(--blue-gray-500);
+
+  &__select {
+    flex: 1;
+    color: var(--blue-gray-500);
+    width: 100%;
+    border: 0;
+    appearance: none;
+    @include text-base;
+  }
+
+  &__icon {
+    pointer-events: unset;
+    width: 2rem;
+    height: 2rem;
+    stroke: var(--blue-gray-500);
+  }
+
+  &__option {
+    padding: 0.5rem 0.5rem;
+    @include text-base;
+    color: var(--blue-gray-500);
+  }
+}
