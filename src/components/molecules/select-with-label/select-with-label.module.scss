@@ -1,0 +1,13 @@
+@import "../../../styles/abstracts/mixins";
+
+.select-with-label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &__label {
+    margin-right: 0.5rem;
+    @include text-base;
+    color: var(--blue-gray-400);
+  }
+}
