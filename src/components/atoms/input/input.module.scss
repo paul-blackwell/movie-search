@@ -1,3 +1,11 @@
-.input {
+@import "../../../styles/abstracts/mixins";
 
+.input {
+  border: 0;
+  @include text-base;
+  color: var(--blue-gray-500);
+
+  &::placeholder {
+    color: var(--blue-gray-400);
+  }
 }
