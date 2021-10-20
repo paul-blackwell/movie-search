@@ -1,6 +1,13 @@
-.layout {
+@import "/src/styles/abstracts/mixins";
 
-    &__main {
-        padding: 0 1.25rem;
-    }
+.layout {
+  @include respond(md) {
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    grid-template-rows: 4.5rem 1fr;
+  }
+
+  &__main {
+    padding: 0 1.25rem;
+  }
 }
