@@ -4,9 +4,9 @@ import styles from "../select/select.module.scss";
 import { FiChevronDown } from "react-icons/fi";
 import { v4 as uuid } from 'uuid';
 
-const Select = ({ handleChange, options }) => (
+const Select = ({ value, handleChange, options }) => (
   <div className={styles.select}>
-    <select className={styles["select__select"]} onChange={handleChange}>
+    <select className={styles["select__select"]} value={value} onChange={handleChange}>
       {options.map((option) => (
         <option key={uuid()} className={styles["select__option"]} value={option.name}>
           {option.name}
@@ -18,6 +18,7 @@ const Select = ({ handleChange, options }) => (
 );
 
 Select.propTypes = {
+  // value: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
 };

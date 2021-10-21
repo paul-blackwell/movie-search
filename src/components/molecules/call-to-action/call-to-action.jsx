@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from "../callToAction/call-to-action.module.scss";
-import ButtonSecondary from '../../atoms/buttonSecondary/button-secondary';
+import styles from "../call-to-action/call-to-action.module.scss";
+import ButtonSecondary from '../../atoms/button-secondary/button-secondary';
 
 const CallToAction = () => {
     return (

@@ -2,7 +2,7 @@
 import React from "react";
 import { FiCompass, FiHeart } from "react-icons/fi";
 import styles from "../nav/nav.module.scss";
-import CallToAction from "../callToAction/call-to-action";
+import CallToAction from "../call-to-action/call-to-action";
 
 const Nav = () => {
   return (
