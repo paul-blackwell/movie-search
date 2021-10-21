@@ -1,16 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from '../input/input.module.scss';
+import styles from "../input/input.module.scss";
 
 const Input = ({ type, value, placeholder, handleChange }) => {
-  if (type === 'submit') return (
-    <input type={type} value="Submit" />
-  )
-
   return (
-    <input className={styles.input} type={type} value={value} onChange={handleChange}  placeholder={placeholder} />
-  )
-}
+    <input
+      className={styles.input}
+      type={type}
+      value={value}
+      onChange={handleChange}
+      placeholder={placeholder}
+    />
+  );
+};
 
 Input.propTypes = {
   type: PropTypes.string.isRequired,
@@ -20,8 +22,8 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  placeholder: '',
-  value: '',
-}
+  placeholder: "",
+  value: "",
+};
 
 export default Input;

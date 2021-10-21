@@ -1,0 +1,21 @@
+@import "../../../styles/abstracts/mixins";
+
+.button-secondary {
+  color: var(--primary-500);
+  border: solid 0.125rem var(--primary-500);
+  background-color: transparent;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  @include text-base;
+
+
+  &:hover {
+    background-color: var(--primary-100);
+  }
+
+  &:active {
+    transition-duration: 0.2s;
+    transform: scale(0.9);
+  }
+}

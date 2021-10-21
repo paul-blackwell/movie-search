@@ -3,6 +3,12 @@
 
 .navbar {
   position: relative;
+  border-right: 0.125rem solid var(--blue-gray-100);
+
+  @include respond(md) {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
 
   &__top-container {
     display: flex;
@@ -10,6 +16,11 @@
     background-color: var(--white);
     padding: 1.2rem;
     border-bottom: 0.125rem solid var(--blue-gray-100);
+
+    
+    @include respond(md) {
+      border-bottom: 0;
+    }
   }
 
   &__menu-icon {
@@ -17,6 +28,10 @@
     margin-left: auto;
     height: 2rem;
     width: 2rem;
+
+    @include respond(md) {
+      display: none;
+    }
   }
 
   &__bottom-container {
@@ -26,17 +41,29 @@
     transform: translateX(100vw);
     pointer-events: none;
 
-    @include respond(lg) {
-        pointer-events: unset;
+    @include respond(md) {
+      position: relative;
+      width: 100%;
+      pointer-events: unset;
     }
   }
 
   &__bottom-container--show {
     animation: sideIn 0.5s forwards;
     pointer-events: unset;
+
+    @include respond(md) {
+      transform: translateX(0);
+      animation: unset;
+    }
   }
 
   &__bottom-container--hide {
     animation: sideOut 0.5s forwards;
+
+    @include respond(md) {
+      transform: translateX(0);
+      animation: unset;
+    }
   }
 }
