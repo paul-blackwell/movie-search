@@ -3,18 +3,22 @@ import { FiMenu } from "react-icons/fi";
 import styles from "../navbar/navbar.module.scss";
 import Logo from "../../molecules/logo/logo";
 import Nav from "../../molecules/nav/nav";
+import Search from "../../molecules/search/search";
 
 const Navbar = () => {
- 
   return (
     <div className={styles.navbar}>
       <div className={styles["navbar__top-container"]}>
         <Logo />
-        <FiMenu className={styles["navbar__menu-icon"]} onClick={() => console.log('I was clicked')} />
+        <div className={styles["navbar__menu-icon-container"]}>
+          <FiMenu className={styles["navbar__menu-icon"]} />
+        </div>
       </div>
-      <div className={`${styles["navbar__bottom-container"]}`}>
+      {/* <div className={`${styles["navbar__bottom-container"]} ${styles["navbar__bottom-container--hide"]}`}>
         <Nav />
-      </div>
+      </div> */}
+      <Search />
+      <Nav />
     </div>
   );
 };

@@ -13,7 +13,6 @@ const Select = ({ value, handleChange, options }) => (
         </option>
       ))}
     </select>
-    <FiChevronDown className={styles["select__icon"]} />
   </div>
 );
 
