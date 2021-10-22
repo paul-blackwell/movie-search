@@ -17,28 +17,30 @@
     padding: 1.2rem;
     border-bottom: 0.125rem solid var(--blue-gray-100);
 
-    
     @include respond(md) {
       border-bottom: 0;
     }
   }
 
-  &__menu-icon {
-    fill: var(--blue-gray-500);
+  &__menu-icon-container {
     margin-left: auto;
-    height: 2rem;
-    width: 2rem;
-
     @include respond(md) {
       display: none;
     }
   }
 
+  &__menu-icon {
+    fill: var(--blue-gray-500);
+    height: 2rem;
+    width: 2rem;
+  }
+
   &__bottom-container {
-    width: 100vw;
+    //width: 100vw;
+    display: none;
     background-color: var(--white);
     position: absolute;
-    transform: translateX(100vw);
+    transform: translateX(62.5rem);
     pointer-events: none;
 
     @include respond(md) {
@@ -49,7 +51,7 @@
   }
 
   &__bottom-container--show {
-    animation: sideIn 0.5s forwards;
+    //animation: slideIn 0.5s forwards;
     pointer-events: unset;
 
     @include respond(md) {
@@ -59,10 +61,10 @@
   }
 
   &__bottom-container--hide {
-    animation: sideOut 0.5s forwards;
+    //animation: slideOut 0.5s forwards;
 
     @include respond(md) {
-      transform: translateX(0);
+      //transform: translateX(0);
       animation: unset;
     }
   }
