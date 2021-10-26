@@ -5,11 +5,6 @@
   position: relative;
   border-right: 0.125rem solid var(--blue-gray-100);
 
-  @include respond(md) {
-    grid-column: 1/2;
-    grid-row: 1/3;
-  }
-
   &__top-container {
     display: flex;
     align-items: center;
