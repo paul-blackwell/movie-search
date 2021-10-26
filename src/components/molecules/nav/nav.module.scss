@@ -6,6 +6,11 @@
     height: calc(100vh - 9.125rem);
     background-color: var(--white);
 
+    @include respond(md) {
+       height: 100%;
+       border-right: 0.125rem solid var(--blue-gray-100);
+    }
+
     &__list {
         padding-top: 1rem;
     }

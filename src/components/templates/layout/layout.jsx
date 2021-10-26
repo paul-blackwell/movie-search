@@ -7,9 +7,9 @@ import Nav from "../../molecules/nav/nav";
 
 const Layout = ({ children }) => (
   <div className={styles.layout}>
-    <Header className="" />
-    <Search className="" />
-    <Nav className="" />
+    <Header className={styles['layout__header']} />
+    <Search className={styles['layout__search']} />
+    <Nav className={styles['layout__nav']} />
     <main className={styles['layout__main']}>{children}</main>
   </div>
 );

@@ -5,6 +5,29 @@
     display: grid;
     grid-template-columns: 16rem 1fr;
     grid-template-rows: 4.5rem 1fr;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &__header {
+    @include respond(md) {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+  }
+
+  &__search {
+    @include respond(md) {
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+  }
+
+  &__nav {
+    @include respond(md) {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
   }
 
   &__main {
