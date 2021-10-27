@@ -4,13 +4,14 @@ import styles from "../input-with-label/input-with-label.module.scss";
 import Input from "../../atoms/input/input";
 
 const InputWithLabel = ({
+  className,
   children,
   type,
   value,
   placeholder,
   handleChange,
 }) => (
-  <div className={styles['input-with-label']}>
+  <div className={`${className} ${styles['input-with-label']}`}>
     <label className={styles['input-with-label__label']}>{children}</label>
     <Input
       type={type}
@@ -22,6 +23,7 @@ const InputWithLabel = ({
 );
 
 InputWithLabel.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node.isRequired,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
@@ -30,8 +32,9 @@ InputWithLabel.propTypes = {
 };
 
 InputWithLabel.defaultProps = {
-  placeholder: "",
-  value: "",
+  className: '',
+  placeholder: '',
+  value: '',
 };
 
 export default InputWithLabel;
