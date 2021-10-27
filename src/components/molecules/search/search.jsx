@@ -6,9 +6,10 @@ import InputWithLabel from "../input-with-label/input-with-label";
 import SelectWithLabel from "../select-with-label/select-with-label";
 import ButtonPrimary from "../../atoms/button-primary/button-primary";
 
-const Search = ({className}) => (
+const Search = ({ className }) => (
   <div className={`${styles.search} ${className}`}>
     <InputWithLabel
+    className={styles["search__input"]}
       type="text"
       placeholder="Search by title"
       value=""
@@ -17,6 +18,7 @@ const Search = ({className}) => (
       <FiSearch className={styles["search__icon"]} />
     </InputWithLabel>
     <SelectWithLabel
+      className={styles["search__select"]}
       label="Type:"
       options={[
         { value: "movie", name: "Movie" },
@@ -24,7 +26,7 @@ const Search = ({className}) => (
         { value: "episode", name: "Episode" },
       ]}
     />
-    <div className={styles['search__button-group']}>
+    <div className={styles["search__button-group"]}>
       <ButtonPrimary>Search</ButtonPrimary>
     </div>
   </div>
@@ -34,9 +36,8 @@ Search.propTypes = {
   className: PropTypes.string,
 };
 
-
 Search.defaultProps = {
-  className: '',
+  className: "",
 };
 
 export default Search;
