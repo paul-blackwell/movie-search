@@ -4,7 +4,7 @@
   display: flex;
   background-color: var(--white);
   border-bottom: 0.125rem solid var(--blue-gray-100);
-  padding: 1.2rem;
+  padding: 0.75rem 1.2rem;
 
   &__icon {
     width: 1.5rem;
@@ -29,13 +29,15 @@
   }
 
   &__button-group {
-    display: flex;
-    padding: 0.75rem 0;
-    margin-left: 2rem;
     display: none;
-
+    
     @include respond(md) {
       display: flex;
+      margin-left: 2rem;
     }
+  }
+
+  &__button {
+    margin-right: 0.75rem;
   }
 }

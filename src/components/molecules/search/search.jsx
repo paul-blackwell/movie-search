@@ -5,6 +5,8 @@ import { FiSearch } from "react-icons/fi";
 import InputWithLabel from "../input-with-label/input-with-label";
 import SelectWithLabel from "../select-with-label/select-with-label";
 import ButtonPrimary from "../../atoms/button-primary/button-primary";
+import ButtonTertiary from "../../atoms/button-tertiary/button-tertiary";
+
 
 const Search = ({ className }) => (
   <div className={`${styles.search} ${className}`}>
@@ -27,7 +29,8 @@ const Search = ({ className }) => (
       ]}
     />
     <div className={styles["search__button-group"]}>
-      <ButtonPrimary>Search</ButtonPrimary>
+    <ButtonTertiary className={styles["search__button"]} onClick={()=> console.log('Button tertiary was clicked')}>Clear</ButtonTertiary>
+      <ButtonPrimary onClick={()=> console.log('Button primary was clicked')}>Search</ButtonPrimary>
     </div>
   </div>
 );
