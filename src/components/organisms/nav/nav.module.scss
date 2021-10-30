@@ -6,6 +6,9 @@
   flex-direction: column;
   height: calc(100vh - 8.125rem);
   background-color: var(--white);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
 
   @include respond(md) {
     height: calc(100vh - 9.25rem);
@@ -17,7 +20,7 @@
   }
 
   &--show {
-    animation: slideIn 0.5s forwards;
+    animation: slideDown 0.5s forwards;
   }
 
   &--hide {
