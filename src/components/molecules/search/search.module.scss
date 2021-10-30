@@ -6,6 +6,14 @@
   border-bottom: 0.125rem solid var(--blue-gray-100);
   padding: 0.75rem 1.2rem;
 
+  @include respond(md) {
+    height: 2.8rem;
+  }
+
+  @include respond(lg) {
+    height: auto;
+  }
+
   &__icon {
     width: 1.5rem;
     height: 1.5rem;
@@ -17,13 +25,13 @@
     max-width: 12rem;
     margin-left: auto;
 
-    @include respond(md) {
+    @include respond(lg) {
       margin-left: 0;
     }
   }
 
   &__input {
-    @include respond(md) {
+    @include respond(lg) {
       margin-left: auto;
     }
   }
