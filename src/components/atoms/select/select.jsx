@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "../select/select.module.scss";
-import { FiChevronDown } from "react-icons/fi";
 import { v4 as uuid } from "uuid";
 
 const Select = ({ className, value, handleChange, options }) => (

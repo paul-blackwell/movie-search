@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FiMenu } from "react-icons/fi";
 import styles from "../header/header.module.scss";
-import Logo from "../logo/logo";
+import Logo from "../../molecules/logo/logo";
 
 const Header = ({className}) => {
   return (
