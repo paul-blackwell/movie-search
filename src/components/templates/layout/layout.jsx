@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "../layout/layout.module.scss";
-import Header from "../../molecules/header/header";
-import Search from '../../molecules/search/search'
-import Nav from "../../molecules/nav/nav";
+import Header from "../../organisms/header/header";
+import Search from '../../organisms/search/search'
+import Nav from "../../organisms/nav/nav";
 
 const Layout = ({ children }) => (
   <div className={styles.layout}>
@@ -15,7 +15,7 @@ const Layout = ({ children }) => (
 );
 
 Layout.propTypes = {
- // children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

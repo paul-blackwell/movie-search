@@ -1,0 +1,65 @@
+@import "/src/styles/abstracts/mixins";
+@import "../../../styles/base/animations";
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 8.125rem);
+  background-color: var(--white);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+
+  @include respond(md) {
+    height: calc(100vh - 9.25rem);
+  }
+
+  @include respond(lg) {
+    height: 100%;
+    border-right: 0.125rem solid var(--blue-gray-100);
+  }
+
+  &--show {
+    animation: slideDown 0.5s forwards;
+  }
+
+  &--hide {
+    animation: slideUp 0.5s forwards;
+  }
+
+  &__list {
+    padding-top: 1rem;
+  }
+
+  &__item {
+    padding: 0.75rem 0;
+  }
+
+  &__link,
+  &__link--active {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    padding-left: 1.25rem;
+    color: var(--blue-gray-500);
+  }
+
+  &__link--active {
+    padding-left: 1rem;
+    color: var(--primary-500);
+    border-left: 0.25rem solid var(--primary-500);
+  }
+
+  &__link--active &__icon {
+    stroke: var(--primary-500);
+  }
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    stroke: var(--blue-gray-500);
+  }
+}

@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FiCompass, FiHeart } from "react-icons/fi";
 import styles from "../nav/nav.module.scss";
-import CallToAction from "../call-to-action/call-to-action";
+import CallToAction from "../../molecules/call-to-action/call-to-action";
 
 const Nav = ({className}) => {
   return (

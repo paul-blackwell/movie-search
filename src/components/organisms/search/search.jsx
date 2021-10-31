@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "../search/search.module.scss";
 import { FiSearch } from "react-icons/fi";
-import InputWithLabel from "../input-with-label/input-with-label";
-import SelectWithLabel from "../select-with-label/select-with-label";
+import InputWithLabel from "../../molecules/input-with-label/input-with-label";
+import SelectWithLabel from "../../molecules/select-with-label/select-with-label";
 import ButtonPrimary from "../../atoms/button-primary/button-primary";
 import ButtonTertiary from "../../atoms/button-tertiary/button-tertiary";
 
