@@ -7,7 +7,7 @@ import CallToAction from "../../molecules/call-to-action/call-to-action";
 
 const Nav = ({className}) => {
   return (
-    <nav className={`${styles.nav} ${className} ${styles['nav--show']}`}>
+    <nav className={`${styles.nav} ${className}`}>
       <ul className={styles["nav__list"]}>
         <li className={styles["nav__item"]}>
           <a className={styles["nav__link--active"]} href="#">

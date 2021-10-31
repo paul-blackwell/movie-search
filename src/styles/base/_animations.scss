@@ -47,8 +47,11 @@
     opacity: 1;
     transform: scaleY(100%);
   }
-  50% {
+  20% {
     opacity: 1;
+  }
+  80% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
