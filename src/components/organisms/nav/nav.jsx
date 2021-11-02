@@ -5,7 +5,7 @@ import { FiCompass, FiHeart } from "react-icons/fi";
 import styles from "../nav/nav.module.scss";
 import CallToAction from "../../molecules/call-to-action/call-to-action";
 
-const Nav = ({className}) => {
+const Nav = ({ className }) => {
   return (
     <nav className={`${styles.nav} ${className}`}>
       <ul className={styles["nav__list"]}>
@@ -31,10 +31,8 @@ Nav.propTypes = {
   className: PropTypes.string,
 };
 
-
 Nav.defaultProps = {
-  className: '',
+  className: "",
 };
-
 
 export default Nav;
