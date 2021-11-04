@@ -1,7 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "../input-with-label/input-with-label.module.scss";
-import Input from "../../atoms/input/input";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { v4 as uuid } from 'uuid';
+import styles from './input-with-label.module.scss';
+import Input from '../../atoms/input/input';
 
 const InputWithLabel = ({
   className,
@@ -10,17 +11,22 @@ const InputWithLabel = ({
   value,
   placeholder,
   handleChange,
-}) => (
-  <div className={`${className} ${styles['input-with-label']}`}>
-    <label className={styles['input-with-label__label']}>{children}</label>
-    <Input
-      type={type}
-      value={value}
-      placeholder={placeholder}
-      handleChange={handleChange}
-    />
-  </div>
-);
+}) => {
+  const inputId = uuid();
+
+  return (
+    <div className={`${className} ${styles['input-with-label']}`}>
+      <label htmlFor={inputId} className={styles['input-with-label__label']}>{children}</label>
+      <Input
+        id={inputId}
+        type={type}
+        value={value}
+        placeholder={placeholder}
+        handleChange={handleChange}
+      />
+    </div>
+  );
+};
 
 InputWithLabel.propTypes = {
   className: PropTypes.string,

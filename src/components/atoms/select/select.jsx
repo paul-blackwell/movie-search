@@ -1,19 +1,22 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "../select/select.module.scss";
-import { v4 as uuid } from "uuid";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { v4 as uuid } from 'uuid';
+import styles from './select.module.scss';
 
-const Select = ({ className, value, handleChange, options }) => (
+const Select = ({
+  id, className, value, handleChange, options,
+}) => (
   <div className={styles.select}>
     <select
-      className={`${className} ${styles["select__select"]}`}
+      id={id}
+      className={`${className} ${styles.select__select}`}
       value={value}
       onChange={handleChange}
     >
       {options.map((option) => (
         <option
           key={uuid()}
-          className={styles["select__option"]}
+          className={styles.select__option}
           value={option.name}
         >
           {option.name}
@@ -24,14 +27,19 @@ const Select = ({ className, value, handleChange, options }) => (
 );
 
 Select.propTypes = {
+  id: PropTypes.number,
   className: PropTypes.string,
-  // value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   handleChange: PropTypes.func.isRequired,
-  options: PropTypes.array.isRequired,
+  options: PropTypes.arrayOf(PropTypes.node).isRequired,
 };
 
 Select.defaultProps = {
-  className: "",
+  id: uuid(),
+  className: '',
 };
 
 export default Select;
