@@ -1,20 +1,23 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "../input/input.module.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { v4 as uuid } from 'uuid';
+import styles from './input.module.scss';
 
-const Input = ({  className, type, value, placeholder, handleChange }) => {
-  return (
-    <input
-      className={`${className} ${styles.input}`}
-      type={type}
-      value={value}
-      onChange={handleChange}
-      placeholder={placeholder}
-    />
-  );
-};
+const Input = ({
+  id, className, type, value, placeholder, handleChange,
+}) => (
+  <input
+    id={id}
+    className={`${className} ${styles.input}`}
+    type={type}
+    value={value}
+    onChange={handleChange}
+    placeholder={placeholder}
+  />
+);
 
 Input.propTypes = {
+  id: PropTypes.number,
   className: PropTypes.string,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
@@ -23,9 +26,10 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  className: "",
-  placeholder: "",
-  value: "",
+  id: uuid(),
+  className: '',
+  placeholder: '',
+  value: '',
 };
 
 export default Input;

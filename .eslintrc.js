@@ -13,6 +13,6 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   rules: {
-    'eslint linebreak-style': ['error', 'windows'],
+    'linebreak-style': 0,
   },
 };
