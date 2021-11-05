@@ -17,6 +17,8 @@
   @include respond(lg) {
     height: 100%;
     border-right: 0.125rem solid var(--blue-gray-100);
+    transform: scaleY(100%);
+    opacity: 1;
   }
 
   &--show {
