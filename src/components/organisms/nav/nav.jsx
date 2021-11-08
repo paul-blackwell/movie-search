@@ -5,8 +5,8 @@ import { FiCompass, FiHeart } from 'react-icons/fi';
 import styles from './nav.module.scss';
 import CallToAction from '../../molecules/call-to-action/call-to-action';
 
-const Nav = ({ className }) => (
-  <nav className={`${styles.nav} ${className}`}>
+const Nav = ({ className, showMobileNav }) => (
+  <nav className={`${styles.nav} ${className} ${showMobileNav ? styles['nav--show'] : styles['nav--hide']}`}>
     <ul className={styles.nav__list}>
       <li className={styles.nav__item}>
         <a className={styles['nav__link--active']} href="#">
@@ -27,6 +27,7 @@ const Nav = ({ className }) => (
 
 Nav.propTypes = {
   className: PropTypes.string,
+  showMobileNav: PropTypes.bool.isRequired,
 };
 
 Nav.defaultProps = {
