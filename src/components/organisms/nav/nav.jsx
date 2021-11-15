@@ -6,7 +6,7 @@ import styles from './nav.module.scss';
 import CallToAction from '../../molecules/call-to-action/call-to-action';
 
 const Nav = ({ className }) => (
-  <nav className={`${styles.nav} ${className}`}>
+  <nav className={`${styles.nav} ${styles['nav--show']} ${className}`}>
     <ul className={styles.nav__list}>
       <li className={styles.nav__item}>
         <a className={styles['nav__link--active']} href="#">
