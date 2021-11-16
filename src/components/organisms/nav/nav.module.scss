@@ -27,6 +27,10 @@
 
   &--hide {
     animation: slideUp 0.5s forwards;
+
+    @include respond(lg) {
+      animation: unset;
+    }
   }
 
   &__list {
