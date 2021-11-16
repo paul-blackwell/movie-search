@@ -17,7 +17,7 @@
   @include respond(lg) {
     height: 100%;
     border-right: 0.125rem solid var(--blue-gray-100);
-    transform: scaleY(100%);
+    transform: scaleY(1);
     opacity: 1;
   }
 
@@ -27,6 +27,10 @@
 
   &--hide {
     animation: slideUp 0.5s forwards;
+
+     @include respond(lg) {
+        animation: unset;
+     }
   }
 
   &__list {
