@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FiMenu } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 import styles from './header.module.scss';
 import Logo from '../../molecules/logo/logo';
 
@@ -13,7 +13,9 @@ const Header = ({ className, showMobileNav, setShowMobileNav }) => {
       <div className={styles['header__top-container']}>
         <Logo />
         <div onClick={handleClick} className={styles['header__menu-icon-container']}>
-          <FiMenu className={styles['header__menu-icon']} />
+          {showMobileNav
+            ? <FiX className={styles['header__menu-icon']} />
+            : <FiMenu className={styles['header__menu-icon']} />}
         </div>
       </div>
     </div>
