@@ -1,0 +1,14 @@
+@import "../../../../styles/abstracts/mixins";
+@import "../../../../styles/abstracts/variables";
+
+.tertiary-heading {
+  font-weight: 500;
+  font-size: var(--base);
+  color: var(--blue-gray-500);
+  margin-bottom: 1.5rem;
+
+  @include respond(lg) {
+    font-size: var(--xl);
+    margin-bottom: 1.5rem;
+  }
+}
