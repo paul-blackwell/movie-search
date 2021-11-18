@@ -2,13 +2,16 @@
 @import "../../../styles/base/animations";
 
 .nav {
-  display: flex;
+  position: absolute;
+  // display: flex;
   flex-direction: column;
   height: calc(100vh - 8.125rem);
-  background-color: var(--white);
-  opacity: 0;
-  transform: scaleY(0);
-  transform-origin: top;
+  width: 100vw;
+  background-color: violet;
+  //background-color: var(--white);
+  //opacity: 0;
+  //transform: scaleY(0);
+  //transform-origin: top;
 
   @include respond(md) {
     height: calc(100vh - 9.25rem);
@@ -21,17 +24,17 @@
     opacity: 1;
   }
 
-  &--show {
-    animation: slideDown 0.5s forwards;
-  }
+  // &--show {
+  //   animation: slideDown 0.5s forwards;
+  // }
 
-  &--hide {
-    animation: slideUp 0.5s forwards;
+  // &--hide {
+  //   animation: slideUp 0.5s forwards;
 
-     @include respond(lg) {
-        animation: unset;
-     }
-  }
+  //    @include respond(lg) {
+  //       animation: unset;
+  //    }
+  // }
 
   &__list {
     padding-top: 1rem;
