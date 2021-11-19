@@ -2,35 +2,29 @@
 @import "../../../styles/base/animations";
 
 .nav {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  right: -62.5rem;
   height: calc(100vh - 8.125rem);
+  width: 100vw;
   background-color: var(--white);
-  opacity: 0;
-  transform: scaleY(0);
-  transform-origin: top;
+  transition: right .5s ease-in-out;
 
   @include respond(md) {
     height: calc(100vh - 9.25rem);
   }
 
   @include respond(lg) {
+    position: relative;
+    right: unset;
     height: 100%;
+    width: auto;
     border-right: 0.125rem solid var(--blue-gray-100);
-    transform: scaleY(1);
-    opacity: 1;
   }
 
   &--show {
-    animation: slideDown 0.5s forwards;
-  }
-
-  &--hide {
-    animation: slideUp 0.5s forwards;
-
-     @include respond(lg) {
-        animation: unset;
-     }
+    right:  0;
   }
 
   &__list {
