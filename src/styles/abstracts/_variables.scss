@@ -53,6 +53,18 @@
   --red-100: hsl(360, 82%, 89%);
   --red-50: hsl(360, 100%, 97%);
 
+  // Yellows
+  --yellow-900: hsl(43, 86%, 17%);
+  --yellow-800: hsl(43, 77%, 27%);
+  --yellow-700: hsl(43, 72%, 37%);
+  --yellow-600: hsl(42, 63%, 48%);
+  --yellow-500: hsl(42, 78%, 60%);
+  --yellow-400: hsl(43, 89%, 70%);
+  --yellow-300: hsl(43, 90%, 76%);
+  --yellow-200: hsl(45, 86%, 81%);
+  --yellow-100: hsl(45, 90%, 88%);
+  --yellow-50: hsl(45, 100%, 96%);
+
 
    // font sizes
   --xs: .75rem;
@@ -67,4 +79,11 @@
   --5xl: 3rem;
   --6xl: 4rem;
   --7xl: 5rem;
+
+  // border radius
+  --border-radius-base: 0.25rem;
+  --border-radius-xl: 1.25rem;
+
+  // border radius
+  --inner-shadow: inset 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
 }

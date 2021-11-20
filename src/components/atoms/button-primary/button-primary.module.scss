@@ -1,3 +1,4 @@
+@import '../../../styles/abstracts/variables';
 @import "../../../styles/abstracts/mixins";
 
 .button-primary {
@@ -9,7 +10,7 @@
   color: var(--white);
   background-color: var(--primary-500);
   border: 0;
-  border-radius: 0.25rem;
+  border-radius: var( --border-radius-base);
   cursor: pointer;
   //width: 100%;
   @include text-base;
@@ -25,5 +26,11 @@
   &:active {
     transition-duration: 0.2s;
     transform: scale(0.9);
+  }
+
+  svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.5rem;
   }
 }
