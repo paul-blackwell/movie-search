@@ -2,13 +2,13 @@
 @import "../../../../styles/abstracts/variables";
 
 .primary-heading {
-  font-weight: 700;
-  font-size: var(--3xl);
   color: var(--blue-gray-800);
   margin-bottom: 0.5rem;
+   @include text-3xl;
 
   @include respond(lg) {
-    font-size: var(--5xl);
     margin-bottom: 1rem;
+    @include text-5xl;
   }
 }
+

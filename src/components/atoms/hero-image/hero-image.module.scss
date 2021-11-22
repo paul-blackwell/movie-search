@@ -1,10 +1,15 @@
 @import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins";
 
-.standard-image {
+.hero-image {
   width: 100%;
-  height: auto;
+  // height: auto;
   object-fit: cover;
   border-radius: var(--border-radius-xl);
+
+  @include respond(lg) {
+    height: 24rem;
+  }
 
   &--inner-shadow {
     box-shadow: var(--inner-shadow);
