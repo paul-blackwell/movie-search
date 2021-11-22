@@ -1,0 +1,12 @@
+@import "../../../styles/abstracts/variables";
+
+.standard-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius-xl);
+
+  &--inner-shadow {
+    box-shadow: var(--inner-shadow);
+  }
+}

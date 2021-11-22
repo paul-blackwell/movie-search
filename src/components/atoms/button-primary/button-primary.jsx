@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './button-primary.module.scss';
 
-const ButtonPrimary = ({ children, handleClick, hasIcon }) => (
+const ButtonPrimary = ({ children, handleClick, icon }) => (
   <button
     type="button"
     onClick={handleClick}
-    className={`${styles['button-primary']} ${hasIcon ? styles['button-primary--icon'] : ''}`}
+    className={styles['button-primary']}
   >
+    {icon}
     {children}
   </button>
 );
@@ -15,11 +16,14 @@ const ButtonPrimary = ({ children, handleClick, hasIcon }) => (
 ButtonPrimary.propTypes = {
   children: PropTypes.node.isRequired,
   handleClick: PropTypes.func.isRequired,
-  hasIcon: PropTypes.bool,
+  icon: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]),
 };
 
 ButtonPrimary.defaultProps = {
-  hasIcon: false,
+  icon: '',
 };
 
 export default ButtonPrimary;

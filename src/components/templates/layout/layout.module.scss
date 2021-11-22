@@ -35,7 +35,7 @@
     max-width: 80.75rem;
     
     @include respond(lg) {
-      margin-right: auto;
+      max-width: 80rem;
       padding: 2.5rem;
     }
   }

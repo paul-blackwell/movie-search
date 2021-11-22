@@ -1,0 +1,19 @@
+@import "../../../styles/abstracts/variables";
+
+.movie-score {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  font-size: var(--base);
+  border: solid 2px var(--yellow-500);
+  background-color: var(--yellow-50);
+  color: var(--yellow-500);
+  border-radius: var( --border-radius-base);
+  
+  &__icon {
+    stroke: var(--yellow-600);
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
+}
