@@ -3,12 +3,14 @@
 
 .hero-image {
   width: 100%;
-  // height: auto;
+  height: 40vh;
   object-fit: cover;
-  border-radius: var(--border-radius-xl);
+  border-bottom-left-radius: var(--border-radius-xl);
+  border-bottom-right-radius: var(--border-radius-xl);
 
   @include respond(lg) {
     height: 24rem;
+    border-radius: var(--border-radius-xl);
   }
 
   &--inner-shadow {

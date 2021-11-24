@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './button-primary.module.scss';
 
-const ButtonPrimary = ({ children, handleClick, icon }) => (
+const ButtonPrimary = ({
+  className, children, handleClick, icon,
+}) => (
   <button
     type="button"
     onClick={handleClick}
-    className={styles['button-primary']}
+    className={`${className} ${styles['button-primary']}`}
   >
     {icon}
     {children}
@@ -14,6 +16,7 @@ const ButtonPrimary = ({ children, handleClick, icon }) => (
 );
 
 ButtonPrimary.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node.isRequired,
   handleClick: PropTypes.func.isRequired,
   icon: PropTypes.oneOfType([
@@ -23,6 +26,7 @@ ButtonPrimary.propTypes = {
 };
 
 ButtonPrimary.defaultProps = {
+  className: '',
   icon: '',
 };
 

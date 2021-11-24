@@ -33,4 +33,8 @@
    &__content &__tertiary-title {
     color: var(--blue-gray-50);
   }
+ 
+  &__content &__button-primary {
+    max-width: 9rem;
+  }
 }

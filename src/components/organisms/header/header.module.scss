@@ -3,8 +3,11 @@
 
 .header {
   position: relative;
-  border-right: 0.125rem solid var(--blue-gray-100);
   background-color: var(--white);
+
+  @include respond(lg) {
+    border-right: 0.125rem solid var(--blue-gray-100);
+  }
 
   &__top-container {
     display: flex;

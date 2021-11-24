@@ -22,7 +22,7 @@ const Hero = () => (
     <div className={styles.hero__content}>
       <PrimaryHeading className={styles.hero__title}>Blade Runner</PrimaryHeading>
       <TertiaryHeading className={styles['hero__tertiary-title']}>Action, Sci-Fi, Thriller</TertiaryHeading>
-      <ButtonPrimary icon={<FiPlay />}>
+      <ButtonPrimary className={styles['hero__button-primary']} icon={<FiPlay />}>
         Watch now
       </ButtonPrimary>
     </div>
