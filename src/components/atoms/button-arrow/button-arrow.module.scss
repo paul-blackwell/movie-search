@@ -1,0 +1,56 @@
+@import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins";
+
+.button-arrow {
+  display: flex;
+  border: solid 0.125rem var(--blue-gray-100);
+  background-color: var(--white);
+  padding: 0.5rem 0.75rem;
+
+
+  &--disabled {
+    background-color: var(--blue-gray-100);
+    color: var(--blue-gray-300);
+
+    &:active {
+      transform: scale(1);
+    }
+
+    &__icon {
+      stroke: var(--blue-gray-200);
+    }
+  }
+
+   &--disabled  &__icon {
+     stroke: var(--blue-gray-300);
+   }
+
+  &--left {
+     border-top-left-radius: var(--border-radius-base);
+     border-bottom-left-radius: var(--border-radius-base);
+  }
+
+  &--right {
+     border-top-right-radius: var(--border-radius-base);
+     border-bottom-right-radius: var(--border-radius-base);
+  }
+
+  &__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    stroke: var(--blue-gray-500);
+  }
+
+  &__span {
+    @include text-base;
+    color: var(--blue-gray-500);
+
+    &--left {
+      margin-left: 0.5rem;
+    }
+
+    &--right {
+      margin-right: 0.5rem;
+    }
+  }
+}
