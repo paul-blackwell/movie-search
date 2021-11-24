@@ -1,0 +1,24 @@
+@import "../../../styles/abstracts/mixins";
+
+.popular-section {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0;
+  padding: 0 1.25rem;
+
+  @include respond(md) {
+     margin: 4rem 0;
+     padding: 0;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+
+  }
+
+  &__secondary-heading {
+    margin-right: auto;
+  }
+
+}

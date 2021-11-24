@@ -1,6 +1,6 @@
 @import "../../../styles/abstracts/mixins";
 
-.hero {
+.hero-section {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -32,5 +32,9 @@
 
    &__content &__tertiary-title {
     color: var(--blue-gray-50);
+  }
+ 
+  &__content &__button-primary {
+    max-width: 9rem;
   }
 }

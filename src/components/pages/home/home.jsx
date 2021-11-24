@@ -1,13 +1,15 @@
 import React from 'react';
 import defaultMovies from '../../../data/default-movies';
-import Hero from '../../organisms/hero/hero';
+import HeroSection from '../../organisms/hero-section/hero-section';
+import PopularSection from '../../organisms/popular-section/popular-section';
 import styles from './home.module.scss';
 
 console.log(defaultMovies);
 
 const Home = () => (
   <div className={styles.home}>
-    <Hero className={styles.home__hero} />
+    <HeroSection className={styles.home__hero} />
+    <PopularSection />
   </div>
 );
 
