@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './popular.module.scss';
+import styles from './popular-section.module.scss';
 import SecondaryHeading from '../../atoms/typography/secondary-heading/secondary-heading';
 
-const Popular = ({ className }) => (
-  <div className={`${styles.popular} ${className}`}>
+const PopularSection = ({ className }) => (
+  <section className={`${styles['popular-section']} ${className}`}>
     <SecondaryHeading>Popular on MovieSearch</SecondaryHeading>
-  </div>
+  </section>
 );
 
-Popular.propTypes = {
+PopularSection.propTypes = {
   className: PropTypes.string,
 };
 
-Popular.defaultProps = {
+PopularSection.defaultProps = {
   className: '',
 };
 
-export default Popular;
+export default PopularSection;
