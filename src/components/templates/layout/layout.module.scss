@@ -33,6 +33,7 @@
   &__main {
     //padding: 0 1.25rem;
     max-width: 80.75rem;
+    overflow-y: scroll;
     
     @include respond(lg) {
       max-width: 80rem;
