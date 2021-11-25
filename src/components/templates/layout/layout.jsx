@@ -17,7 +17,11 @@ const Layout = ({ children }) => {
       />
       <Search className={styles.layout__search} />
       <Nav className={styles.layout__nav} showMobileNav={showMobileNav} />
-      <main className={styles.layout__main}>{children}</main>
+      <main className={styles.layout__main}>
+        <div className={styles.layout__wrapper}>
+          {children}
+        </div>
+      </main>
     </div>
   );
 };

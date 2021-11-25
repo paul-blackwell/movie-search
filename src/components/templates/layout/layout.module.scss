@@ -31,7 +31,10 @@
   }
 
   &__main {
-    //padding: 0 1.25rem;
+    overflow-y: scroll;
+  }
+
+  &__wrapper {
     max-width: 80.75rem;
     overflow-y: scroll;
     
