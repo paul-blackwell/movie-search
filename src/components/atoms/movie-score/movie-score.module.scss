@@ -1,9 +1,10 @@
 @import "../../../styles/abstracts/variables";
 
 .movie-score {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   padding: 0.25rem;
+  margin-bottom: 0.5rem;
   font-size: var(--base);
   border: solid 2px var(--yellow-500);
   background-color: var(--yellow-50);

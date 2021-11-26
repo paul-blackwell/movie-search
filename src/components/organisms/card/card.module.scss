@@ -1,0 +1,15 @@
+@import '../../../styles/abstracts/variables';
+
+.card {
+  // Just for testing 
+  max-width: 305px;
+  border: 0.125rem solid var(--blue-gray-100);
+  border-radius: var(--border-radius-xl);
+  padding: 	1.25rem;
+
+  &__image-container {
+    width: 100%;
+    height: 12rem;
+    margin-bottom: 2rem;
+  }
+}
