@@ -5,6 +5,7 @@ import StandardImage from '../../atoms/standard-image/standard-image';
 import MovieScore from '../../atoms/movie-score/movie-score';
 import SecondaryHeading from '../../atoms/typography/secondary-heading/secondary-heading';
 import Paragraph from '../../atoms/typography/paragraph/paragraph';
+import truncate from '../../../utils/truncate';
 
 const Card = ({ className, movie }) => {
   const { Title, Poster, Genre } = movie;
@@ -15,7 +16,7 @@ const Card = ({ className, movie }) => {
         <StandardImage src={Poster} alt={Title} />
       </div>
       <MovieScore score="90%" />
-      <SecondaryHeading>{Title}</SecondaryHeading>
+      <SecondaryHeading>{truncate(Title, 20)}</SecondaryHeading>
       <Paragraph>{Genre}</Paragraph>
     </div>
   );

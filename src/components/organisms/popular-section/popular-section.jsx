@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './popular-section.module.scss';
 import SecondaryHeading from '../../atoms/typography/secondary-heading/secondary-heading';
 import PaginationButtons from '../../molecules/pagination-buttons/pagination-buttons';
-import Card from '../card/card';
+import Card from '../../molecules/card/card';
 
 const PopularSection = ({ className, movies }) => (
   <section className={`${styles['popular-section']} ${className}`}>
