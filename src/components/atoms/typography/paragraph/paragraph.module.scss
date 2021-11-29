@@ -1,0 +1,9 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
+
+.paragraph {
+  color: var(--blue-gray-500);
+  margin-bottom: 0.75rem;
+  @include text-base;
+}
+

@@ -9,7 +9,7 @@ console.log(defaultMovies);
 const Home = () => (
   <div className={styles.home}>
     <HeroSection className={styles.home__hero} />
-    <PopularSection />
+    <PopularSection movies={defaultMovies} />
   </div>
 );
 

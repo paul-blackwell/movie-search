@@ -6,7 +6,7 @@
   margin: 5rem 0;
   padding: 0 1.25rem;
 
-  @include respond(md) {
+  @include respond(lg) {
      margin: 4rem 0;
      padding: 0;
   }
@@ -14,7 +14,15 @@
   &__title {
     display: flex;
     align-items: center;
+    margin-bottom: 2rem;
+  }
 
+  &__pagination-buttons {
+    display: none;
+
+    @include respond(lg) {
+      display: block;
+    }
   }
 
   &__secondary-heading {
