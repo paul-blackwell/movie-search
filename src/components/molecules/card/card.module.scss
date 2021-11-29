@@ -1,12 +1,15 @@
 @import '../../../styles/abstracts/variables';
+@import '../../../styles/abstracts/mixins';
 
 .card {
-  // Just for testing 
-  max-width: 305px;
   border: 0.125rem solid var(--blue-gray-100);
   border-radius: var(--border-radius-xl);
   padding: 	1.25rem;
   background-color: var(--white);
+
+  @include respond(lg) {
+    max-width: 305px;
+  }
 
   &__image-container {
     width: 100%;

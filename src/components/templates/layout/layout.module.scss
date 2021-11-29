@@ -36,7 +36,7 @@
 
   &__wrapper {
     max-width: 80.75rem;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     
     @include respond(lg) {
       max-width: 80rem;

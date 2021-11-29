@@ -9,7 +9,9 @@ const PopularSection = ({ className, movies }) => (
   <section className={`${styles['popular-section']} ${className}`}>
     <div className={styles['popular-section__title']}>
       <SecondaryHeading className={styles['popular-section__secondary-heading']}>Popular on MovieSearch</SecondaryHeading>
-      <PaginationButtons />
+      <div className={styles['popular-section__pagination-buttons']}>
+        <PaginationButtons />
+      </div>
     </div>
     <Card movie={movies.popular[0]} />
   </section>
