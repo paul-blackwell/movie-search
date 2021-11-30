@@ -29,4 +29,19 @@
     margin-right: auto;
   }
 
+  &__cards {
+    display: flex;
+    flex-direction: column;
+
+    @include respond(md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.5rem;
+    }
+
+    @include respond(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
 }

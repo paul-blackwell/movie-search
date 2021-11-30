@@ -13,7 +13,12 @@ const PopularSection = ({ className, movies }) => (
         <PaginationButtons />
       </div>
     </div>
-    <Card movie={movies.popular[0]} />
+    <div className={styles['popular-section__cards']}>
+      {/* <Card movie={movies.popular[0]} />
+      <Card movie={movies.popular[0]} /> */}
+      <Card movie={movies.popular[0]} />
+      <Card movie={movies.popular[0]} />
+    </div>
   </section>
 );
 
