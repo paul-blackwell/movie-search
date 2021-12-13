@@ -6,14 +6,15 @@
   border-radius: var(--border-radius-xl);
   padding: 	1.25rem;
   background-color: var(--white);
-
-  @include respond(lg) {
-    max-width: 305px;
-  }
+  margin-bottom: 2.25rem;
 
   &__image-container {
     width: 100%;
-    height: 12rem;
+    height: 16rem;
     margin-bottom: 2rem;
+
+    @include respond(lg) {
+      height: 12rem;
+    }
   }
 }
