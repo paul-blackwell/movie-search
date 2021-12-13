@@ -8,7 +8,6 @@ import useWindowDimensions from '../../../hooks/use-window-dimensions';
 
 const PopularSection = ({ className, movies }) => {
   const { width } = useWindowDimensions();
-
   console.log(width);
 
   return (
