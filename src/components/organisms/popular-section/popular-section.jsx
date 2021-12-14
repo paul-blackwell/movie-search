@@ -22,7 +22,7 @@ const PopularSection = ({ className, movies }) => {
         <Card movie={movies.popular[0]} />
         <Card movie={movies.popular[1]} />
         <Card movie={movies.popular[2]} />
-        <Card movie={movies.popular[4]} />
+        <Card movie={movies.popular[3]} />
       </div>
     </section>
   );
