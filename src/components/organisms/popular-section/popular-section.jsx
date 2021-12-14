@@ -7,6 +7,7 @@ import Card from '../../molecules/card/card';
 import useWindowDimensions from '../../../hooks/use-window-dimensions';
 
 const PopularSection = ({ className, movies }) => {
+  // This will give us the width of the viewport every time the window size changes
   const { width } = useWindowDimensions();
   console.log(width);
 
