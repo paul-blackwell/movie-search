@@ -7,6 +7,7 @@ import Card from '../../molecules/card/card';
 import useWindowDimensions from '../../../hooks/use-window-dimensions';
 
 const PopularSection = ({ className, movies }) => {
+  // This will give us the width of the viewport every time the window size changes
   const { width } = useWindowDimensions();
   console.log(width);
 
@@ -19,10 +20,10 @@ const PopularSection = ({ className, movies }) => {
         </div>
       </div>
       <div className={styles['popular-section__cards']}>
-        {/* <Card movie={movies.popular[0]} />
-      <Card movie={movies.popular[0]} /> */}
         <Card movie={movies.popular[0]} />
-        <Card movie={movies.popular[0]} />
+        <Card movie={movies.popular[1]} />
+        <Card movie={movies.popular[2]} />
+        <Card movie={movies.popular[3]} />
       </div>
     </section>
   );

@@ -20,7 +20,7 @@
   &__pagination-buttons {
     display: none;
 
-    @include respond(lg) {
+    @include respond(md) {
       display: block;
     }
   }
