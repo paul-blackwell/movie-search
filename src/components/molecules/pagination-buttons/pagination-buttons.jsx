@@ -5,6 +5,10 @@ import ButtonArrow from '../../atoms/button-arrow/button-arrow';
 
 const PaginationButtons = ({
   className,
+  next,
+  previous,
+  disableLeft,
+  disableRight,
 }) => (
   <div className={`${className} ${styles['pagination-buttons']}`}>
     <ButtonArrow left disabled handleClick={() => console.log('left button clicked')} />
@@ -18,6 +22,10 @@ const PaginationButtons = ({
 
 PaginationButtons.propTypes = {
   className: PropTypes.string,
+  next: PropTypes.func.isRequired,
+  previous: PropTypes.func.isRequired,
+  disableLeft: PropTypes.bool.isRequired,
+  disableRight: PropTypes.bool.isRequired,
 };
 
 PaginationButtons.defaultProps = {
