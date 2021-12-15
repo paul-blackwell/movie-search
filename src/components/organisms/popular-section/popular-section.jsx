@@ -16,7 +16,12 @@ const PopularSection = ({ className, movies }) => {
       <div className={styles['popular-section__title']}>
         <SecondaryHeading className={styles['popular-section__secondary-heading']}>Popular on MovieSearch</SecondaryHeading>
         <div className={styles['popular-section__pagination-buttons']}>
-          <PaginationButtons />
+          <PaginationButtons
+            next={() => console.log('next was clicked')}
+            previous={() => console.log('previous was clicked')}
+            disableLeft
+            disableRight={false}
+          />
         </div>
       </div>
       <div className={styles['popular-section__cards']}>

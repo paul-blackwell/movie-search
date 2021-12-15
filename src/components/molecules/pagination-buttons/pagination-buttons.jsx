@@ -11,10 +11,15 @@ const PaginationButtons = ({
   disableRight,
 }) => (
   <div className={`${className} ${styles['pagination-buttons']}`}>
-    <ButtonArrow left disabled handleClick={() => console.log('left button clicked')} />
+    <ButtonArrow
+      left
+      disabled={disableLeft}
+      handleClick={() => next()}
+    />
     <ButtonArrow
       right
-      handleClick={() => console.log('right button clicked')}
+      disabled={disableRight}
+      handleClick={() => previous()}
       text="Next"
     />
   </div>
