@@ -31,7 +31,9 @@
   }
 
   &__main {
-    overflow-y: scroll;
+     @include respond(lg) {
+       overflow-y: scroll;
+    }
   }
 
   &__wrapper {

@@ -4,26 +4,31 @@ import styles from './popular-section.module.scss';
 import SecondaryHeading from '../../atoms/typography/secondary-heading/secondary-heading';
 import PaginationButtons from '../../molecules/pagination-buttons/pagination-buttons';
 import Card from '../../molecules/card/card';
-// import useWindowDimensions from '../../../hooks/use-window-dimensions';
+import useWindowDimensions from '../../../hooks/use-window-dimensions';
 
 const PopularSection = ({ className, movies }) => {
   // This will give us the width of the viewport every time the window size changes
-  // const { width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
+
+  // This will give us the number of cards we need to show depending on the screen size
+  const cardsToShow = (arr) => {
+    if (width > 1280) {
+      return 4;
+    }
+    if (width > 1040) {
+      return 3;
+    }
+    if (width > 768) {
+      return 2;
+    }
+    return arr.length;
+  };
+
+  // Set up the states we will need for our pagination
   let popular = [...movies.popular];
   const [startIndex, setStartIndex] = useState(0);
-  const [endIndex, setEndIndex] = useState(4);
-  const [paginatedMovies, setPaginatedMovies] = useState(popular.splice(startIndex, endIndex));
-
-  // let cardsToShow = movies.popular.length;
-  // if (width > 768) {
-  //   cardsToShow = 2;
-  // }
-  // if (width > 1040) {
-  //   cardsToShow = 3;
-  // }
-  // if (width > 1280) {
-  //   cardsToShow = 4;
-  // }
+  const [endIndex, setEndIndex] = useState(cardsToShow(movies.popular));
+  const [paginatedMovies, setPaginatedMovies] = useState(popular.slice(startIndex, endIndex));
 
   const next = () => {
     if (endIndex < movies.popular.length) {
@@ -39,10 +44,19 @@ const PopularSection = ({ className, movies }) => {
     }
   };
 
+  // Update paginatedMovies is startIndex or endIndex change
   useEffect(() => {
     popular = [...movies.popular];
-    setPaginatedMovies(popular.splice(startIndex, endIndex));
+    setPaginatedMovies(popular.slice(startIndex, endIndex));
   }, [startIndex, endIndex]);
+
+  // If the width changes reset the pagination
+  useEffect(() => {
+    popular = [...movies.popular];
+    setStartIndex(0);
+    setEndIndex(cardsToShow(movies.popular));
+    setPaginatedMovies(popular.slice(startIndex, endIndex));
+  }, [width]);
 
   return (
     <section className={`${styles['popular-section']} ${className}`}>
@@ -59,7 +73,7 @@ const PopularSection = ({ className, movies }) => {
       </div>
       <div className={styles['popular-section__cards']}>
         {paginatedMovies.map((movie) => (
-          <Card movie={movie} />
+          <Card movie={movie} key={movie.imdbID} />
         ))}
       </div>
     </section>
