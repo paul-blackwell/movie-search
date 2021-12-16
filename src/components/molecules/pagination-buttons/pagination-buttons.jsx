@@ -14,12 +14,12 @@ const PaginationButtons = ({
     <ButtonArrow
       left
       disabled={disableLeft}
-      handleClick={() => next()}
+      handleClick={() => previous()}
     />
     <ButtonArrow
       right
       disabled={disableRight}
-      handleClick={() => previous()}
+      handleClick={() => next()}
       text="Next"
     />
   </div>
