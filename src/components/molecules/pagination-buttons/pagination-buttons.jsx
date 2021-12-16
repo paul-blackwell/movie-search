@@ -15,12 +15,13 @@ const PaginationButtons = ({
       left
       disabled={disableLeft}
       handleClick={() => previous()}
+      text={disableLeft ? '' : 'Previous'}
     />
     <ButtonArrow
       right
       disabled={disableRight}
       handleClick={() => next()}
-      text="Next"
+      text={disableRight ? '' : 'Next'}
     />
   </div>
 );
