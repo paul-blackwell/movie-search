@@ -1,5 +1,9 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addToFavorites } from '../../../reducers/favoritesSlice';
 import styles from './card.module.scss';
 import StandardImage from '../../atoms/standard-image/standard-image';
 import MovieScore from '../../atoms/movie-score/movie-score';
@@ -25,8 +29,14 @@ const Card = ({ className, movie }) => {
     return 'No score found';
   };
 
+  // Just for testing (unit-3)
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(addToFavorites(movie));
+  };
+
   return (
-    <div className={`${className} ${styles.card}`}>
+    <div onClick={handleClick} className={`${className} ${styles.card}`}>
       <div className={styles['card__image-container']}>
         <StandardImage src={Poster} alt={Title} />
       </div>
