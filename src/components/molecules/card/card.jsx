@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { addToFavorites } from '../../../reducers/favoritesSlice';
 import styles from './card.module.scss';
 import StandardImage from '../../atoms/standard-image/standard-image';
@@ -17,19 +17,28 @@ const Card = ({ className, movie }) => {
   } = movie;
 
   const getMovieScore = () => {
-    const rottenTomatoes = Ratings.find((rating) => rating.Source === 'Rotten Tomatoes');
+    const rottenTomatoes = Ratings.find(
+      (rating) => rating.Source === 'Rotten Tomatoes',
+    );
     if (rottenTomatoes) return rottenTomatoes.Value;
 
     const metacritic = Ratings.find((rating) => rating.Source === 'Metacritic');
     if (metacritic) return metacritic.Value;
 
-    const internetMovieDatabase = Ratings.find((rating) => rating.Source === 'Internet Movie Database');
+    const internetMovieDatabase = Ratings.find(
+      (rating) => rating.Source === 'Internet Movie Database',
+    );
     if (internetMovieDatabase) return internetMovieDatabase.Value;
 
     return 'No score found';
   };
 
-  // Just for testing (unit-3)
+  // Just for testing will be remove in the future (unit-3)
+  // Get global favorites state
+  const favorites = useSelector((state) => state.favorites.value);
+  console.log(favorites);
+
+  // This will add the movie to the favorites global state when the card is clicked
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(addToFavorites(movie));
