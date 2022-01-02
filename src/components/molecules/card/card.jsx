@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToFavorites } from '../../../reducers/favoritesSlice';
+import { addToFavorites, removeFromFavorites } from '../../../reducers/favoritesSlice';
 import styles from './card.module.scss';
 import getMovieScore from '../../../utils/getMovieScore';
 import StandardImage from '../../atoms/standard-image/standard-image';
@@ -20,11 +20,17 @@ const Card = ({ className, movie }) => {
   // Just for testing will be remove in the future (unit-3)
   // Get global favorites state
   const favorites = useSelector((state) => state.favorites.value);
-  console.log(favorites);
 
   // This will add the movie to the favorites global state when the card is clicked
   const dispatch = useDispatch();
   const handleClick = () => {
+    // If movie is already in favorites remove it and return
+    if (favorites.find((favorite) => favorite.imdbID === movie.imdbID)) {
+      dispatch(removeFromFavorites(movie));
+      return;
+    }
+
+    // If movie is not already in favorites add it
     dispatch(addToFavorites(movie));
   };
 

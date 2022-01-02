@@ -1,5 +1,6 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable import/prefer-default-export */
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, current } from '@reduxjs/toolkit';
 
 const initialState = {
   value: [],
@@ -12,9 +13,15 @@ export const favoritesSlice = createSlice({
     addToFavorites: (state, action) => {
       state.value.push(action.payload);
     },
+    removeFromFavorites: (state, action) => {
+      const movieID = action.payload.imdbID;
+      const currentState = current(state.value);
+      const updatedFavorites = currentState.filter((movie) => movie.imdbID !== movieID);
+      state.value = updatedFavorites;
+    },
   },
 });
 
-export const { addToFavorites } = favoritesSlice.actions;
+export const { addToFavorites, removeFromFavorites } = favoritesSlice.actions;
 
 export default favoritesSlice.reducer;
