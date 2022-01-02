@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable import/prefer-default-export */
 import { createSlice, current } from '@reduxjs/toolkit';
 
 const initialState = {
