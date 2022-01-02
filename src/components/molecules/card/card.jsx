@@ -1,8 +1,8 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToFavorites, removeFromFavorites } from '../../../reducers/favoritesSlice';
 import styles from './card.module.scss';
 import getMovieScore from '../../../utils/getMovieScore';
 import StandardImage from '../../atoms/standard-image/standard-image';
@@ -25,12 +25,12 @@ const Card = ({ className, movie }) => {
   const handleClick = () => {
     // If movie is already in favorites remove it and return
     if (favorites.find((favorite) => favorite.imdbID === movie.imdbID)) {
-      dispatch(removeFromFavorites(movie));
+      dispatch({ type: 'REMOVE_FROM_FAVORITES', payload: movie });
       return;
     }
 
     // If movie is not already in favorites add it
-    dispatch(addToFavorites(movie));
+    dispatch({ type: 'ADD_TO_FAVORITES', payload: movie });
   };
 
   return (
