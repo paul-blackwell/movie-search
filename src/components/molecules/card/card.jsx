@@ -1,8 +1,8 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToFavorites } from '../../../reducers/favoritesSlice';
 import styles from './card.module.scss';
 import getMovieScore from '../../../utils/getMovieScore';
 import StandardImage from '../../atoms/standard-image/standard-image';
@@ -24,7 +24,7 @@ const Card = ({ className, movie }) => {
   // This will add the movie to the favorites global state when the card is clicked
   const dispatch = useDispatch();
   const handleClick = () => {
-    dispatch(addToFavorites(movie));
+    dispatch({ type: 'ADD_TO_FAVORITES', payload: movie });
   };
 
   return (
