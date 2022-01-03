@@ -8,7 +8,6 @@ const initialState = {
 const favoritesReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(addToFavorites, (state, action) => {
-      console.log(state);
       state.value.push(action.payload);
     });
 });
