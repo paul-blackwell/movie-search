@@ -1,8 +1,5 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux';
 import styles from './card.module.scss';
 import getMovieScore from '../../../utils/getMovieScore';
 import StandardImage from '../../atoms/standard-image/standard-image';
@@ -16,25 +13,8 @@ const Card = ({ className, movie }) => {
     Title, Poster, Genre, Ratings,
   } = movie;
 
-  // Just for testing will be remove in the future (unit-3)
-  // Get global favorites state
-  const favorites = useSelector((state) => state.favorites.value);
-
-  // This will add the movie to the favorites global state when the card is clicked
-  const dispatch = useDispatch();
-  const handleClick = () => {
-    // If movie is already in favorites remove it and return
-    if (favorites.find((favorite) => favorite.imdbID === movie.imdbID)) {
-      dispatch({ type: 'REMOVE_FROM_FAVORITES', payload: movie });
-      return;
-    }
-
-    // If movie is not already in favorites add it
-    dispatch({ type: 'ADD_TO_FAVORITES', payload: movie });
-  };
-
   return (
-    <div onClick={handleClick} className={`${className} ${styles.card}`}>
+    <div className={`${className} ${styles.card}`}>
       <div className={styles['card__image-container']}>
         <StandardImage src={Poster} alt={Title} />
       </div>
