@@ -15,7 +15,7 @@ const Nav = ({ className, showMobileNav }) => (
         </NavLink>
       </li>
       <li className={styles.nav__item}>
-        <NavLink className={({ isActive }) => (isActive ? styles['nav__link--active'] : styles.nav__link)} to="search">
+        <NavLink className={({ isActive }) => (isActive ? styles['nav__link--active'] : styles.nav__link)} to="search-results">
           <FiCompass className={styles.nav__icon} />
           Browse
         </NavLink>
