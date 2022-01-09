@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FiCompass, FiHeart, FiHome } from 'react-icons/fi';
@@ -16,7 +15,7 @@ const Nav = ({ className, showMobileNav }) => (
         </NavLink>
       </li>
       <li className={styles.nav__item}>
-        <NavLink className={({ isActive }) => (isActive ? styles['nav__link--active'] : styles.nav__link)} to="search">
+        <NavLink className={({ isActive }) => (isActive ? styles['nav__link--active'] : styles.nav__link)} to="search-results">
           <FiCompass className={styles.nav__icon} />
           Browse
         </NavLink>
