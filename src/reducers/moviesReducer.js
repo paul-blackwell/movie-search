@@ -2,13 +2,13 @@ import { createReducer } from '@reduxjs/toolkit';
 import { setCurrentlySelectedMovie } from '../actions/moviesActions';
 
 const initialState = {
-  value: '',
+  currentlySelectedMovie: '',
 };
 
 const moviesReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(setCurrentlySelectedMovie, (state, action) => {
-      state.value = action.payload;
+      state.currentlySelectedMovie = action.payload;
     });
 });
 
