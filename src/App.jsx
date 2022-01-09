@@ -4,6 +4,8 @@ import './styles/main.scss';
 import Layout from './components/templates/layout/layout';
 import Home from './components/pages/home/home';
 import Movie from './components/pages/movie/movie';
+import SearchResults from './components/pages/search-results/search-results';
+import Favorites from './components/pages/favorites/favorites';
 import NoMatch from './components/pages/no-match/no-match';
 
 const App = () => (
@@ -13,6 +15,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="movie" element={<Movie />} />
+          <Route path="search-results" element={<SearchResults />} />
+          <Route path="favorites" element={<Favorites />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </Layout>
