@@ -3,7 +3,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import styles from './card.module.scss';
+import makeUrlFriendly from '../../../utils/makeUrlFriendly';
 import getMovieScore from '../../../utils/getMovieScore';
 import StandardImage from '../../atoms/standard-image/standard-image';
 import MovieScore from '../../atoms/movie-score/movie-score';
@@ -17,8 +19,11 @@ const Card = ({ className, movie }) => {
   } = movie;
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleClick = () => {
     dispatch({ type: 'SET_CURRENTLY_SELECTED_MOVIE', payload: movie });
+    navigate(`/movie#${makeUrlFriendly(movie.Title)}`);
   };
 
   return (
