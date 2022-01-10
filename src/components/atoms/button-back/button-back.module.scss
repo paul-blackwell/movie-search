@@ -1,0 +1,23 @@
+
+@import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins";
+
+
+.button-back {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--blue-gray-500);
+  margin-bottom: 0.75rem;
+  
+  @include respond(md) {
+    margin-bottom: 2rem;
+  }
+
+  &__icon {
+    margin-right: 0.5rem;
+    stroke: var(--blue-gray-500);
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
