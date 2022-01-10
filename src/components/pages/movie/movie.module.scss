@@ -1,3 +1,14 @@
+@import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins";
+
 .movie {
-  
+  margin: 1.5rem 2rem;
+  @include respond(lg) {
+    margin: 0;
+  }
+
+  &__image-container {
+    border-radius: 1rem;
+    height: 12rem;
+  }
 }

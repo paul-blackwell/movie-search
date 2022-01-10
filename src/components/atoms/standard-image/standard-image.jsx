@@ -5,11 +5,16 @@ import styles from './standard-image.module.scss';
 const StandardImage = ({
   className, src, alt, innerShadow,
 }) => (
-  <img
-    className={`${className} ${styles['standard-image']} ${innerShadow ? styles['standard-image--inner-shadow'] : ''}`}
-    src={src}
-    alt={alt}
-  />
+  <div className={styles['standard-image']}>
+    <img
+      className={`${className} ${styles['standard-image__img']}`}
+      src={src}
+      alt={alt}
+    />
+    {innerShadow && (
+      <div className={styles['standard-image__inner-shadow']} />
+    )}
+  </div>
 );
 
 StandardImage.propTypes = {
@@ -21,7 +26,7 @@ StandardImage.propTypes = {
 
 StandardImage.defaultProps = {
   className: '',
-  innerShadow: false,
+  innerShadow: true,
 };
 
 export default StandardImage;
