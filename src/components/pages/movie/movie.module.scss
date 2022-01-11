@@ -14,6 +14,7 @@
     padding-top: 1.25rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+    margin-bottom: 2.75rem;
 
     @include respond(md) {
       height: 20rem;
@@ -21,6 +22,7 @@
 
     @include respond(lg) {
       height: 33.75rem;
+      margin-bottom: 0;
     }
   }
 
@@ -29,5 +31,15 @@
     top: 0;
     right: 0;
     z-index: 1;
+  }
+
+  &__genre-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__genre-container .movie__score {
+    margin: 0;
   }
 }
