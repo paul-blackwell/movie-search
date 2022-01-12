@@ -35,30 +35,32 @@ const Movie = () => {
     <div className={styles.movie}>
       <ButtonBack to="/">Back</ButtonBack>
       {movieObj !== '' && (
-        <>
+        <div className={styles.movie__container}>
           <div className={styles['movie__image-container']}>
             <div className={styles['movie__button-favorites-container']}>
               <ButtonFavorites onClick={handleAddToFavorites} />
             </div>
             <StandardImage src={Poster} alt={Title} />
           </div>
-          <PrimaryHeading>{Title}</PrimaryHeading>
-          <div className={styles['movie__genre-container']}>
-            <Paragraph>{Genre}</Paragraph>
-            <MovieScore className={styles.movie__score} score={getMovieScore(Ratings)} />
-          </div>
-          <div className={styles['movie__para-container']}>
-            <Paragraph>{movieObj.Plot}</Paragraph>
-          </div>
-          <ButtonPrimary
-            icon={<FiPlay className={styles['movie__button-icon']} />}
-            onClick={() => console.log('Watch now was clicked')}
-            fullWidthOnMobile
-          >
-            Watch now
+          <div className={styles.movie__content}>
+            <PrimaryHeading>{Title}</PrimaryHeading>
+            <div className={styles['movie__genre-container']}>
+              <Paragraph>{Genre}</Paragraph>
+              <MovieScore className={styles.movie__score} score={getMovieScore(Ratings)} />
+            </div>
+            <div className={styles['movie__para-container']}>
+              <Paragraph>{movieObj.Plot}</Paragraph>
+            </div>
+            <ButtonPrimary
+              icon={<FiPlay className={styles['movie__button-icon']} />}
+              onClick={() => console.log('Watch now was clicked')}
+              fullWidthOnMobile
+            >
+              Watch now
 
-          </ButtonPrimary>
-        </>
+            </ButtonPrimary>
+          </div>
+        </div>
       )}
     </div>
   );
