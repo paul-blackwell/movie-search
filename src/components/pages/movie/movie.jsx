@@ -49,7 +49,7 @@ const Movie = () => {
               <MovieScore className={styles.movie__score} score={getMovieScore(Ratings)} />
             </div>
             <div className={styles['movie__para-container']}>
-              <Paragraph>{movieObj.Plot}</Paragraph>
+              <Paragraph>{Plot}</Paragraph>
             </div>
             <ButtonPrimary
               icon={<FiPlay className={styles['movie__button-icon']} />}
