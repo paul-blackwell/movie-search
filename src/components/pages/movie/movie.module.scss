@@ -7,6 +7,13 @@
     margin: 0;
   }
 
+  &__container {
+    @include respond(lg) {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
   &__image-container {
     position: relative;
     border-radius: 1rem;
@@ -21,8 +28,7 @@
     }
 
     @include respond(lg) {
-      height: 33.75rem;
-      margin-bottom: 0;
+      flex: 1;
     }
   }
 
@@ -37,9 +43,28 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__para-container {
+    margin-bottom: 2.25rem;
   }
 
   &__genre-container .movie__score {
     margin: 0;
+  }
+
+  &__button-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    stroke: var(--white);
+  }
+
+  &__content {
+     @include respond(lg) {
+      flex: 1;
+      padding-top: 1.25rem;
+      padding-right: 1.25rem;
+    }
   }
 }

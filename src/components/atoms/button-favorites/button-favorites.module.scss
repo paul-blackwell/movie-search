@@ -5,6 +5,7 @@
   background-color: var(--red-50);
   border-radius: 0.25rem;
   cursor: pointer;
+  box-sizing: content-box;
   
   &__icon {
     width: 1.5rem;
