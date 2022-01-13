@@ -18,5 +18,6 @@ module.exports = {
     'no-console': 0,
     'import/prefer-default-export': 0,
     'no-param-reassign': 0,
+    'react/forbid-prop-types': 0,
   },
 };

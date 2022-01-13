@@ -10,7 +10,7 @@ import MovieScore from '../../atoms/movie-score/movie-score';
 import PrimaryHeading from '../../atoms/typography/primary-heading/primary-heading';
 import Paragraph from '../../atoms/typography/paragraph/paragraph';
 
-const MovieSection = ({ movieObj }) => {
+const MovieSection = ({ className, movieObj }) => {
   const {
     Poster, Title, Genre, Plot,
   } = movieObj;
@@ -48,6 +48,10 @@ const MovieSection = ({ movieObj }) => {
 MovieSection.propTypes = {
   movieObj: PropTypes.object.isRequired,
   className: PropTypes.string,
+};
+
+MovieSection.defaultProps = {
+  className: '',
 };
 
 export default MovieSection;
