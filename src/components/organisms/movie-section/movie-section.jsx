@@ -67,7 +67,7 @@ MovieSection.propTypes = {
 
 MovieSection.defaultProps = {
   className: '',
-  favorite: '',
+  favorite: false,
 };
 
 export default MovieSection;

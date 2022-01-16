@@ -2,7 +2,7 @@ const url = window.location.origin;
 
 const defaultMovies = {
   hero: {
-    Title: 'Blade Runner 2049',
+    Title: 'Blade Runner',
     Year: '2017',
     Rated: 'R',
     Released: '06 Oct 2017',
