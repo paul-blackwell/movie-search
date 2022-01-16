@@ -30,9 +30,9 @@ const MovieSection = ({ className, movieObj, favorite }) => {
   };
 
   // TODO: Remove from favorites
-  const handleRemoveFromFavorites = () => {
-    console.log('I was removed from favorites');
-  };
+  // const handleRemoveFromFavorites = () => {
+  //   console.log('I was removed from favorites');
+  // };
 
   return (
     <div className={styles['movie-section']}>
