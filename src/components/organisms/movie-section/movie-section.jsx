@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FiPlay } from 'react-icons/fi';
 import styles from './movie-section.module.scss';
 import getMovieScore from '../../../utils/getMovieScore';
+import ButtonBack from '../../atoms/button-back/button-back';
 import ButtonFavorites from '../../atoms/button-favorites/button-favorites';
 import ButtonPrimary from '../../atoms/button-primary/button-primary';
 import StandardImage from '../../atoms/standard-image/standard-image';
@@ -27,6 +28,9 @@ const MovieSection = ({ className, movieObj, favorite }) => {
 
   return (
     <div className={styles['movie-section']}>
+      <ButtonBack to="/">
+        Back
+      </ButtonBack>
       <div className={`${className} ${styles['movie-section__container']}`}>
         <div className={styles['movie-section__image-container']}>
           {!favorite && (
