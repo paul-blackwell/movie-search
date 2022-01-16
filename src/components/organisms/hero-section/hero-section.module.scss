@@ -5,6 +5,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   position: relative;
+  cursor: pointer;
 
   &__score-container {
     position: absolute;

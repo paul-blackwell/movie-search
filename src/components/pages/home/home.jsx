@@ -6,7 +6,7 @@ import styles from './home.module.scss';
 
 const Home = () => (
   <div className={styles.home}>
-    <HeroSection className={styles.home__hero} />
+    <HeroSection className={styles.home__hero} movieObj={defaultMovies.hero} />
     <PopularSection movies={defaultMovies} />
   </div>
 );

@@ -14,7 +14,9 @@ const App = () => (
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="movie" element={<Movie />} />
+          <Route path="movie" element={<Movie />}>
+            <Route path=":movieID" element={<Movie />} />
+          </Route>
           <Route path="search-results" element={<SearchResults />} />
           <Route path="favorites" element={<Favorites />} />
           <Route path="*" element={<NoMatch />} />

@@ -1,11 +1,12 @@
 @import "../../../styles/abstracts/variables";
 
 .button-favorites {
-  border: solid 1px var(--red-400);
+  border: solid 0.125rem var(--red-400);
   background-color: var(--red-50);
   border-radius: 0.25rem;
   cursor: pointer;
   box-sizing: content-box;
+  box-shadow: var(--shadow-xs);
   
   &__icon {
     width: 1.5rem;
@@ -15,11 +16,20 @@
   }
 }
 
-.button-favorites--active {
-  border: solid 1px var(--red-400);
+.button-favorites--alreadySelected {
+  border: solid 0.125rem var(--red-400);
   background-color: var(--red-400);
 
   .button-favorites__icon {
     stroke: var(--white);
+  }
+}
+
+.button-favorites--remove {
+  border: solid 0.125rem var(--blue-gray-100);
+  background-color: var(--white);
+
+  .button-favorites__icon {
+    stroke: var(--blue-gray-500);
   }
 }

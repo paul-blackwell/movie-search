@@ -1,11 +1,8 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styles from './card.module.scss';
-import makeUrlFriendly from '../../../utils/makeUrlFriendly';
 import getMovieScore from '../../../utils/getMovieScore';
 import StandardImage from '../../atoms/standard-image/standard-image';
 import MovieScore from '../../atoms/movie-score/movie-score';
@@ -15,7 +12,7 @@ import truncate from '../../../utils/truncate';
 
 const Card = ({ className, movie }) => {
   const {
-    Title, Poster, Genre, Ratings,
+    Title, Poster, Genre, Ratings, imdbID,
   } = movie;
 
   const dispatch = useDispatch();
@@ -23,7 +20,7 @@ const Card = ({ className, movie }) => {
 
   const handleClick = () => {
     dispatch({ type: 'SET_CURRENTLY_SELECTED_MOVIE', payload: movie });
-    navigate(`/movie#${makeUrlFriendly(movie.Title)}`);
+    navigate(`/movie/${imdbID}`);
   };
 
   return (
