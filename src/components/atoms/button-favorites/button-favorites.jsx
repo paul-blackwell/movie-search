@@ -8,13 +8,22 @@ const ButtonFavorites = ({
 }) => {
   if (removeFavorite) {
     return (
-      <button onClick={onClick} type="button" className={`${className} ${styles['button-favorites']} ${styles['button-favorites--remove']}`}>
+      <button
+        onClick={onClick}
+        type="button"
+        className={`${className} ${styles['button-favorites']} ${styles['button-favorites--remove']}`}
+      >
         <FiX className={styles['button-favorites__icon']} />
       </button>
     );
   }
   return (
-    <button onClick={onClick} type="button" className={`${className} ${styles['button-favorites']} ${alreadySelected ? styles['button-favorites--alreadySelected'] : ''}`}>
+    <button
+      onClick={onClick}
+      disabled={alreadySelected}
+      type="button"
+      className={`${className} ${styles['button-favorites']} ${alreadySelected ? styles['button-favorites--alreadySelected'] : ''}`}
+    >
       <FiHeart className={styles['button-favorites__icon']} />
     </button>
   );
