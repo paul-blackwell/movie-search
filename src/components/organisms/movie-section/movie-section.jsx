@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FiPlay } from 'react-icons/fi';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './movie-section.module.scss';
 import getMovieScore from '../../../utils/getMovieScore';
 import ButtonFavorites from '../../atoms/button-favorites/button-favorites';
@@ -12,12 +13,19 @@ import Paragraph from '../../atoms/typography/paragraph/paragraph';
 
 const MovieSection = ({ className, movieObj, favorite }) => {
   const {
-    Poster, Title, Genre, Plot, Ratings,
+    Poster, Title, Genre, Plot, Ratings, imdbID,
   } = movieObj;
 
-  // TODO: Add to favorites
+  // Get global favorites state
+  const favorites = useSelector((state) => state.favorites.value);
+  const movieIsInFavorites = favorites.find((item) => item.imdbID === imdbID);
+
+  // This will add the movie to the favorites global state
+  const dispatch = useDispatch();
   const handleAddToFavorites = () => {
-    console.log('I was added to favorites');
+    if (!movieIsInFavorites) {
+      dispatch({ type: 'ADD_TO_FAVORITES', payload: movieObj });
+    }
   };
 
   // TODO: Remove from favorites
@@ -31,7 +39,10 @@ const MovieSection = ({ className, movieObj, favorite }) => {
         <div className={styles['movie-section__image-container']}>
           {!favorite && (
           <div className={styles['movie-section__button-favorites-container']}>
-            <ButtonFavorites onClick={handleAddToFavorites} />
+            <ButtonFavorites
+              onClick={handleAddToFavorites}
+              alreadySelected={movieIsInFavorites}
+            />
           </div>
           )}
           <StandardImage src={Poster} alt={Title} />
