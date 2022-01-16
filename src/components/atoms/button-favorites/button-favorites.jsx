@@ -4,7 +4,7 @@ import { FiHeart, FiX } from 'react-icons/fi';
 import styles from './button-favorites.module.scss';
 
 const ButtonFavorites = ({
-  className, onClick, active, removeFavorite,
+  className, onClick, alreadySelected, removeFavorite,
 }) => {
   if (removeFavorite) {
     return (
@@ -14,7 +14,7 @@ const ButtonFavorites = ({
     );
   }
   return (
-    <button onClick={onClick} type="button" className={`${className} ${styles['button-favorites']} ${active ? styles['button-favorites--active'] : ''}`}>
+    <button onClick={onClick} type="button" className={`${className} ${styles['button-favorites']} ${alreadySelected ? styles['button-favorites--alreadySelected'] : ''}`}>
       <FiHeart className={styles['button-favorites__icon']} />
     </button>
   );
@@ -23,13 +23,13 @@ const ButtonFavorites = ({
 ButtonFavorites.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func.isRequired,
-  active: PropTypes.bool,
+  alreadySelected: PropTypes.bool,
   removeFavorite: PropTypes.bool,
 };
 
 ButtonFavorites.defaultProps = {
   className: '',
-  active: false,
+  alreadySelected: false,
   removeFavorite: false,
 };
 
