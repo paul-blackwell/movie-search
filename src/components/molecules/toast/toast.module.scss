@@ -1,0 +1,33 @@
+@import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins";
+
+.toast {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0.75rem;
+    margin: 0 1.25rem;
+    background-color: var(--teal-50);
+    border: solid 0.125rem var(--teal-500);
+    border-radius: 0.25rem;
+    box-shadow: var(--shadow-xl);
+  }
+
+  &__para {
+    color: var(--teal-700);
+    margin-left: 0.75rem;
+    margin-right: auto;
+  }
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: var(--teal-500);
+  }
+}
