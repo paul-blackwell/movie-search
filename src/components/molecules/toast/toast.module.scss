@@ -8,6 +8,11 @@
   right: 0;
   z-index: 1000;
 
+  @include respond(md) {
+    display: flex;
+    justify-content: center;
+  }
+
   &__container {
     display: flex;
     align-items: center;
@@ -17,6 +22,10 @@
     border: solid 0.125rem var(--teal-500);
     border-radius: 0.25rem;
     box-shadow: var(--shadow-xl);
+
+    @include respond(md) {
+      margin: 0;
+    }
   }
 
   &__para {
