@@ -30,7 +30,17 @@
 
   &__para {
     color: var(--primary-700);
-    margin: 0 0.75rem;
+    margin-left: 0.75rem;
+    margin-right: auto;
+
+    @include respond(md) {
+      margin: 0 0.75rem;
+    }
+  }
+
+  &__button {
+    border: none;
+    background-color: transparent;
   }
 
   &__icon {
