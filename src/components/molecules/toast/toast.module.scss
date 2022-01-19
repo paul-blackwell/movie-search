@@ -18,8 +18,8 @@
     align-items: center;
     padding: 1rem 0.75rem;
     margin: 0 1.25rem;
-    background-color: var(--teal-50);
-    border: solid 0.125rem var(--teal-500);
+    background-color: var(--primary-50);
+    border: solid 0.125rem var(--primary-500);
     border-radius: 0.25rem;
     box-shadow: var(--shadow-xl);
 
@@ -29,14 +29,44 @@
   }
 
   &__para {
-    color: var(--teal-700);
-    margin-left: 0.75rem;
-    margin-right: auto;
+    color: var(--primary-700);
+    margin: 0 0.75rem;
   }
 
   &__icon {
     width: 1.5rem;
     height: 1.5rem;
+    stroke: var(--primary-500);
+  }
+}
+
+
+.toast--error {
+  .toast__container {
+    background-color: var(--red-50);
+    border: solid 0.125rem var(--red-500);
+  }
+  .toast__para {
+    color: var(--red-700);
+    margin: 0 0.75rem;
+  }
+
+  .toast__icon {
+    stroke: var(--red-500);
+  }
+}
+
+.toast--success {
+  .toast__container {
+    background-color: var(--teal-50);
+    border: solid 0.125rem var(--teal-500);
+  }
+  .toast__para {
+    color: var(--teal-700);
+    margin: 0 0.75rem;
+  }
+
+  .toast__icon {
     stroke: var(--teal-500);
   }
 }
