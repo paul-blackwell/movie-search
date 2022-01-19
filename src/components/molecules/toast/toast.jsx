@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FiCheck, FiX, FiAlertOctagon } from 'react-icons/fi';
+import {
+  FiInfo, FiCheck, FiX, FiAlertOctagon,
+} from 'react-icons/fi';
 import styles from './toast.module.scss';
 
 const Toast = ({ className, error, success }) => {
@@ -37,7 +39,7 @@ const Toast = ({ className, error, success }) => {
       <div className={styles.toast__container}>
         <FiCheck className={styles.toast__icon} />
         <p className={styles.toast__para}>Added Blade Runner to your favorites.</p>
-        <FiX className={styles.toast__icon} />
+        <FiInfo className={styles.toast__icon} />
       </div>
     </div>
   );
