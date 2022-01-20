@@ -12,7 +12,10 @@ const initialState = {
 const toastReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(showToast, (state, action) => {
-      console.log('Do something');
+      state.toast = { ...action.payload, display: true };
+    })
+    .addCase(hideToast, (state) => {
+      state.toast = { ...state, display: false };
     });
 });
 
