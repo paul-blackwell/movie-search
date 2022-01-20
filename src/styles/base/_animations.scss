@@ -56,9 +56,28 @@
 }
 
 
-// @keyframes toastSlideIn {
-//   0% {
-//     opacity: 0;
-//     transform: ;
-//   }
-// }
+@keyframes toastSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-6.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-6rem);
+  }
+}
+
+@keyframes toastSlideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(-6rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}

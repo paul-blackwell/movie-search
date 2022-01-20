@@ -1,12 +1,14 @@
 @import "../../../styles/abstracts/variables";
 @import "../../../styles/abstracts/mixins";
+@import "../../../styles/base/animations";
 
 .toast {
   position: fixed;
-  bottom: 1.25rem;
+  bottom: -5rem;
   left: 0;
   right: 0;
   z-index: 1000;
+  opacity: 0;
 
   @include respond(md) {
     display: flex;
@@ -80,3 +82,12 @@
     stroke: var(--teal-500);
   }
 }
+
+.toast--show {
+  animation: toastSlideIn .5s forwards cubic-bezier(0, 0, 0.58, 1);
+}
+
+.toast--hide {
+  animation: toastSlideOut .2s forwards cubic-bezier(0.42, 0, 1, 1);
+}
+
