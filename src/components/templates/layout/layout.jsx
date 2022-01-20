@@ -4,6 +4,7 @@ import styles from './layout.module.scss';
 import Header from '../../organisms/header/header';
 import Search from '../../organisms/search/search';
 import Nav from '../../organisms/nav/nav';
+import Toast from '../../molecules/toast/toast';
 
 const Layout = ({ children }) => {
   const [showMobileNav, setShowMobileNav] = useState(false);
@@ -22,6 +23,7 @@ const Layout = ({ children }) => {
           {children}
         </div>
       </main>
+      <Toast />
     </div>
   );
 };
