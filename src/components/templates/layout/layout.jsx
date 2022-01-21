@@ -12,9 +12,8 @@ const Layout = ({ children }) => {
   const [toastState, setToastState] = useState('');
 
   const toastStore = useSelector((state) => state.toast);
-  console.log(toastStore);
   useEffect(() => {
-    setToastState(toastStore);
+    setToastState(toastStore.toast);
   }, [toastStore]);
 
   return (
@@ -34,9 +33,9 @@ const Layout = ({ children }) => {
       <Toast
         show={toastState.display}
         hide={toastState.display}
-        message={toastStore.message}
-        error={toastStore.type === 'error'}
-        success={toastStore.type === 'success'}
+        message={toastState.message}
+        error={toastState.type === 'error'}
+        success={toastState.type === 'success'}
       />
     </div>
   );

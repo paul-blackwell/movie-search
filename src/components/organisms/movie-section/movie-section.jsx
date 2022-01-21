@@ -26,6 +26,16 @@ const MovieSection = ({ className, movieObj, favorite }) => {
   const handleAddToFavorites = () => {
     if (!movieIsInFavorites) {
       dispatch({ type: 'ADD_TO_FAVORITES', payload: movieObj });
+
+      // SHow success toast
+      dispatch({
+        type: 'SHOW_TOAST',
+        payload: {
+          display: true,
+          message: `Added ${Title} to your favorites. `,
+          type: 'success',
+        },
+      });
     }
   };
 
