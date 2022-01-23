@@ -14,8 +14,8 @@ const toastReducer = createReducer(initialState, (builder) => {
     .addCase(showToast, (state, action) => {
       state.toast = { ...action.payload, display: true };
     })
-    .addCase(hideToast, (state) => {
-      state.toast = { ...state, display: false };
+    .addCase(hideToast, (state, action) => {
+      state.toast = { ...action.payload, display: false };
     });
 });
 
