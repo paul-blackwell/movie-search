@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './layout.module.scss';
 import Header from '../../organisms/header/header';
 import Search from '../../organisms/search/search';
@@ -14,6 +14,18 @@ const Layout = ({ children }) => {
   const toastStore = useSelector((state) => state.toast);
   useEffect(() => {
     setToastState(toastStore.toast);
+  }, [toastStore]);
+
+  // This will hide the toast after 2 seconds if its showing
+  const dispatch = useDispatch();
+  useEffect(() => {
+    let timer;
+    if (toastStore.toast.display) {
+      timer = setTimeout(() => {
+        dispatch({ type: 'HIDE_TOAST', payload: toastStore.toast });
+      }, 2000);
+    }
+    return () => clearTimeout(timer);
   }, [toastStore]);
 
   return (
