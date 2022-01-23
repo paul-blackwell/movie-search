@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   FiInfo, FiCheck, FiX, FiAlertOctagon,
 } from 'react-icons/fi';
@@ -13,14 +14,15 @@ const Toast = ({
   show,
   hide,
 }) => {
-  // TODO:
+  const toastStore = useSelector((state) => state.toast);
+  const dispatch = useDispatch();
   const handleClick = () => {
-    console.log('toast was closed');
+    dispatch({ type: 'HIDE_TOAST', payload: toastStore.toast });
   };
 
   const showOrHideToast = () => {
     if (show) return `${styles['toast--show']}`;
-    if (hide) return `${styles['toast--hide']}`;
+    if (!hide && hide !== null) return `${styles['toast--hide']}`;
 
     return '';
   };
