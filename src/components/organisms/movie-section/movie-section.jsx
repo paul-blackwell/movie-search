@@ -27,7 +27,7 @@ const MovieSection = ({ className, movieObj, favorite }) => {
     if (!movieIsInFavorites) {
       dispatch({ type: 'ADD_TO_FAVORITES', payload: movieObj });
 
-      // SHow success toast
+      // Show success toast
       dispatch({
         type: 'SHOW_TOAST',
         payload: {
