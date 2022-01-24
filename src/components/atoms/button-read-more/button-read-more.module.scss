@@ -1,0 +1,12 @@
+@import '../../../styles/abstracts/variables';
+
+.button-read-more {
+  display: inline-flex;
+  color: var(--blue-500);
+  cursor: pointer;
+
+  &__icon {
+    margin-left: 0.5rem;
+    stroke: var(--blue-500);
+  }
+}
