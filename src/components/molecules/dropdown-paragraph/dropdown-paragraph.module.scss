@@ -1,0 +1,8 @@
+.dropdown-paragraph {
+  display: flex;
+  flex-direction: column;
+
+  &__button-container {
+    margin-left: auto;
+  }
+}

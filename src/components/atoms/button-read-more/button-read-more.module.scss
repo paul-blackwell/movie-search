@@ -2,11 +2,18 @@
 
 .button-read-more {
   display: inline-flex;
-  color: var(--blue-500);
+  align-items: center;
+  color: var(--primary-500);
+  background-color: transparent;
+  font-size: 1rem;
+  border: 0;
   cursor: pointer;
 
   &__icon {
     margin-left: 0.5rem;
-    stroke: var(--blue-500);
+    stroke: var(--primary-500);
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.5rem;
   }
 }

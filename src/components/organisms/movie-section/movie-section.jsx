@@ -76,7 +76,6 @@ const MovieSection = ({ className, movieObj, favorite }) => {
             fullWidthOnMobile
           >
             Watch now
-
           </ButtonPrimary>
         </div>
       </div>

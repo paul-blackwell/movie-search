@@ -7,16 +7,16 @@ const ButtonReadMore = ({ className, onClick, showLess }) => {
   if (showLess) {
     return (
       <button onClick={onClick} type="button" className={`${className} ${styles['button-read-more']}`}>
-        <FiChevronUp className={styles['button-read-more__icon']} />
         Show less
+        <FiChevronUp className={styles['button-read-more__icon']} />
       </button>
     );
   }
 
   return (
     <button onClick={onClick} type="button" className={`${className} ${styles['button-read-more']}`}>
-      <FiChevronDown className={styles['button-read-more__icon']} />
       Show more
+      <FiChevronDown className={styles['button-read-more__icon']} />
     </button>
   );
 };
