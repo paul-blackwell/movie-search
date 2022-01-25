@@ -11,8 +11,9 @@ import StandardImage from '../../atoms/standard-image/standard-image';
 import MovieScore from '../../atoms/movie-score/movie-score';
 import PrimaryHeading from '../../atoms/typography/primary-heading/primary-heading';
 import Paragraph from '../../atoms/typography/paragraph/paragraph';
+import DropdownParagraph from '../../molecules/dropdown-paragraph/dropdown-paragraph';
 
-const MovieSection = ({ className, movieObj, favorite }) => {
+const MovieSection = ({ className, movieObj, withDropDown }) => {
   const {
     Poster, Title, Genre, Plot, Ratings, imdbID,
   } = movieObj;
@@ -51,7 +52,7 @@ const MovieSection = ({ className, movieObj, favorite }) => {
       </ButtonBack>
       <div className={`${className} ${styles['movie-section__container']}`}>
         <div className={styles['movie-section__image-container']}>
-          {!favorite && (
+          {!withDropDown && (
           <div className={styles['movie-section__button-favorites-container']}>
             <ButtonFavorites
               onClick={handleAddToFavorites}
@@ -67,9 +68,14 @@ const MovieSection = ({ className, movieObj, favorite }) => {
             <Paragraph>{Genre}</Paragraph>
             <MovieScore className={styles['movie-section__score']} score={getMovieScore(Ratings)} />
           </div>
-          <div className={styles['movie-section__para-container']}>
-            <Paragraph>{Plot}</Paragraph>
-          </div>
+          {withDropDown
+            ? <DropdownParagraph>{Plot}</DropdownParagraph>
+            : (
+
+              <div className={styles['movie-section__para-container']}>
+                <Paragraph>{Plot}</Paragraph>
+              </div>
+            )}
           <ButtonPrimary
             icon={<FiPlay className={styles['movie-section__button-icon']} />}
             onClick={() => console.log('Watch now was clicked')}
@@ -79,6 +85,7 @@ const MovieSection = ({ className, movieObj, favorite }) => {
           </ButtonPrimary>
         </div>
       </div>
+      <div className={styles['movie-section__divider']} />
     </div>
   );
 };
@@ -86,12 +93,12 @@ const MovieSection = ({ className, movieObj, favorite }) => {
 MovieSection.propTypes = {
   movieObj: PropTypes.object.isRequired,
   className: PropTypes.string,
-  favorite: PropTypes.bool,
+  withDropDown: PropTypes.bool,
 };
 
 MovieSection.defaultProps = {
   className: '',
-  favorite: false,
+  withDropDown: false,
 };
 
 export default MovieSection;
