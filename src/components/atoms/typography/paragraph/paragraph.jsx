@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './paragraph.module.scss';
 
 const Paragraph = ({ className, children }) => (
-  <p className={`${className} ${styles['paragraph-heading']}`}>{children}</p>
+  <p className={`${className} ${styles.paragraph}`}>{children}</p>
 );
 
 Paragraph.propTypes = {

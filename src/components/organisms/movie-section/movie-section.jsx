@@ -11,8 +11,11 @@ import StandardImage from '../../atoms/standard-image/standard-image';
 import MovieScore from '../../atoms/movie-score/movie-score';
 import PrimaryHeading from '../../atoms/typography/primary-heading/primary-heading';
 import Paragraph from '../../atoms/typography/paragraph/paragraph';
+import DropdownParagraph from '../../molecules/dropdown-paragraph/dropdown-paragraph';
 
-const MovieSection = ({ className, movieObj, favorite }) => {
+const MovieSection = ({
+  className, movieObj, dropDown, removeFromFavoritesBtn, divider,
+}) => {
   const {
     Poster, Title, Genre, Plot, Ratings, imdbID,
   } = movieObj;
@@ -40,9 +43,9 @@ const MovieSection = ({ className, movieObj, favorite }) => {
   };
 
   // TODO: Remove from favorites
-  // const handleRemoveFromFavorites = () => {
-  //   console.log('I was removed from favorites');
-  // };
+  const handleRemoveFromFavorites = () => {
+    console.log('I was removed from favorites');
+  };
 
   return (
     <div className={styles['movie-section']}>
@@ -51,13 +54,20 @@ const MovieSection = ({ className, movieObj, favorite }) => {
       </ButtonBack>
       <div className={`${className} ${styles['movie-section__container']}`}>
         <div className={styles['movie-section__image-container']}>
-          {!favorite && (
-          <div className={styles['movie-section__button-favorites-container']}>
-            <ButtonFavorites
-              onClick={handleAddToFavorites}
-              alreadySelected={movieIsInFavorites}
-            />
-          </div>
+          {removeFromFavoritesBtn ? (
+            <div className={styles['movie-section__button-favorites-container']}>
+              <ButtonFavorites
+                onClick={handleRemoveFromFavorites}
+                removeFavorite
+              />
+            </div>
+          ) : (
+            <div className={styles['movie-section__button-favorites-container']}>
+              <ButtonFavorites
+                onClick={handleAddToFavorites}
+                alreadySelected={movieIsInFavorites}
+              />
+            </div>
           )}
           <StandardImage src={Poster} alt={Title} />
         </div>
@@ -67,19 +77,26 @@ const MovieSection = ({ className, movieObj, favorite }) => {
             <Paragraph>{Genre}</Paragraph>
             <MovieScore className={styles['movie-section__score']} score={getMovieScore(Ratings)} />
           </div>
-          <div className={styles['movie-section__para-container']}>
-            <Paragraph>{Plot}</Paragraph>
-          </div>
+          {dropDown
+            ? <DropdownParagraph>{Plot}</DropdownParagraph>
+            : (
+
+              <div className={styles['movie-section__para-container']}>
+                <Paragraph>{Plot}</Paragraph>
+              </div>
+            )}
           <ButtonPrimary
             icon={<FiPlay className={styles['movie-section__button-icon']} />}
             onClick={() => console.log('Watch now was clicked')}
             fullWidthOnMobile
           >
             Watch now
-
           </ButtonPrimary>
         </div>
       </div>
+      {divider && (
+      <div className={styles['movie-section__divider']} />
+      )}
     </div>
   );
 };
@@ -87,12 +104,16 @@ const MovieSection = ({ className, movieObj, favorite }) => {
 MovieSection.propTypes = {
   movieObj: PropTypes.object.isRequired,
   className: PropTypes.string,
-  favorite: PropTypes.bool,
+  dropDown: PropTypes.bool,
+  removeFromFavoritesBtn: PropTypes.bool,
+  divider: PropTypes.bool,
 };
 
 MovieSection.defaultProps = {
   className: '',
-  favorite: false,
+  dropDown: false,
+  removeFromFavoritesBtn: false,
+  divider: false,
 };
 
 export default MovieSection;
