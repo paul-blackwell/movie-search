@@ -13,7 +13,9 @@ import PrimaryHeading from '../../atoms/typography/primary-heading/primary-headi
 import Paragraph from '../../atoms/typography/paragraph/paragraph';
 import DropdownParagraph from '../../molecules/dropdown-paragraph/dropdown-paragraph';
 
-const MovieSection = ({ className, movieObj, withDropDown }) => {
+const MovieSection = ({
+  className, movieObj, dropDown, removeFromFavoritesBtn, divider,
+}) => {
   const {
     Poster, Title, Genre, Plot, Ratings, imdbID,
   } = movieObj;
@@ -41,9 +43,9 @@ const MovieSection = ({ className, movieObj, withDropDown }) => {
   };
 
   // TODO: Remove from favorites
-  // const handleRemoveFromFavorites = () => {
-  //   console.log('I was removed from favorites');
-  // };
+  const handleRemoveFromFavorites = () => {
+    console.log('I was removed from favorites');
+  };
 
   return (
     <div className={styles['movie-section']}>
@@ -52,13 +54,20 @@ const MovieSection = ({ className, movieObj, withDropDown }) => {
       </ButtonBack>
       <div className={`${className} ${styles['movie-section__container']}`}>
         <div className={styles['movie-section__image-container']}>
-          {!withDropDown && (
-          <div className={styles['movie-section__button-favorites-container']}>
-            <ButtonFavorites
-              onClick={handleAddToFavorites}
-              alreadySelected={movieIsInFavorites}
-            />
-          </div>
+          {removeFromFavoritesBtn ? (
+            <div className={styles['movie-section__button-favorites-container']}>
+              <ButtonFavorites
+                onClick={handleRemoveFromFavorites}
+                removeFavorite
+              />
+            </div>
+          ) : (
+            <div className={styles['movie-section__button-favorites-container']}>
+              <ButtonFavorites
+                onClick={handleAddToFavorites}
+                alreadySelected={movieIsInFavorites}
+              />
+            </div>
           )}
           <StandardImage src={Poster} alt={Title} />
         </div>
@@ -68,7 +77,7 @@ const MovieSection = ({ className, movieObj, withDropDown }) => {
             <Paragraph>{Genre}</Paragraph>
             <MovieScore className={styles['movie-section__score']} score={getMovieScore(Ratings)} />
           </div>
-          {withDropDown
+          {dropDown
             ? <DropdownParagraph>{Plot}</DropdownParagraph>
             : (
 
@@ -85,7 +94,9 @@ const MovieSection = ({ className, movieObj, withDropDown }) => {
           </ButtonPrimary>
         </div>
       </div>
+      {divider && (
       <div className={styles['movie-section__divider']} />
+      )}
     </div>
   );
 };
@@ -93,12 +104,16 @@ const MovieSection = ({ className, movieObj, withDropDown }) => {
 MovieSection.propTypes = {
   movieObj: PropTypes.object.isRequired,
   className: PropTypes.string,
-  withDropDown: PropTypes.bool,
+  dropDown: PropTypes.bool,
+  removeFromFavoritesBtn: PropTypes.bool,
+  divider: PropTypes.bool,
 };
 
 MovieSection.defaultProps = {
   className: '',
-  withDropDown: false,
+  dropDown: false,
+  removeFromFavoritesBtn: false,
+  divider: false,
 };
 
 export default MovieSection;

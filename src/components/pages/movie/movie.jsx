@@ -35,7 +35,7 @@ const Movie = () => {
 
   if (movieObj !== '') {
     return (
-      <MovieSection movieObj={movieObj} />
+      <MovieSection movieObj={movieObj} dropDown removeFromFavoritesBtn divider />
     );
   }
 
