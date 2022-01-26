@@ -75,5 +75,10 @@
     background-color: var(--blue-gray-100);
     height: 0.125rem;
     width: 100%;
+    margin-bottom: 2rem;
+
+    @include respond(lg) {
+      margin-bottom: 6rem;
+    }
   }
 }
