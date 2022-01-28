@@ -1,0 +1,8 @@
+@import "../../../styles/abstracts/mixins";
+.favorites {
+  margin: 1.5rem 2rem;
+
+  @include respond(lg) {
+    margin: 0;
+  }
+}

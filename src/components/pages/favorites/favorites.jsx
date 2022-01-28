@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import styles from './favorites.module.scss';
 import ButtonBack from '../../atoms/button-back/button-back';
 import SecondaryHeading from '../../atoms/typography/secondary-heading/secondary-heading';
 
@@ -22,12 +23,12 @@ const Favorites = () => {
 
   if (favorites.length < 1) {
     return (
-      <>
+      <div className={styles.favorites}>
         <ButtonBack to="/">
           Back
         </ButtonBack>
         <SecondaryHeading>You currently have no favorites saved</SecondaryHeading>
-      </>
+      </div>
     );
   }
 
