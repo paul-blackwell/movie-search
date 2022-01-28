@@ -24,7 +24,7 @@ const MovieSection = ({
   const favorites = useSelector((state) => state.favorites.value);
   const movieIsInFavorites = favorites.find((item) => item.imdbID === imdbID);
 
-  // This will add the movie to the favorites global state
+  // This will add the movie to favorites store
   const dispatch = useDispatch();
   const handleAddToFavorites = () => {
     if (!movieIsInFavorites) {
@@ -42,9 +42,9 @@ const MovieSection = ({
     }
   };
 
-  // TODO: Remove from favorites
+  // This will remove a favorite for the favorites store
   const handleRemoveFromFavorites = () => {
-    console.log('I was removed from favorites');
+    dispatch({ type: 'REMOVE_FROM_FAVORITES', payload: movieObj });
   };
 
   return (
