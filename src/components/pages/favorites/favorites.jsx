@@ -10,7 +10,6 @@ const Favorites = () => {
   // If no favorites show error toast
   const dispatch = useDispatch();
   if (favorites.length < 1) {
-    console.log('fired');
     dispatch({
       type: 'SHOW_TOAST',
       payload: {
