@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import styles from './favorites.module.scss';
 import ButtonBack from '../../atoms/button-back/button-back';
 import SecondaryHeading from '../../atoms/typography/secondary-heading/secondary-heading';
+import MovieSection from '../../organisms/movie-section/movie-section';
 
 const Favorites = () => {
   // Get Favorites from store
@@ -35,8 +36,16 @@ const Favorites = () => {
 
   // If there are movies in the favorites store
   return (
-    <div>
-      Test
+    <div className={styles.favorites}>
+      {favorites.map((favorite) => (
+        <MovieSection
+          key={favorite.imdbID}
+          movieObj={favorite}
+          dropDown
+          removeFromFavoritesBtn
+          divider
+        />
+      ))}
     </div>
   );
 };
