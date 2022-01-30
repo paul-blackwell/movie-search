@@ -8,7 +8,7 @@ const Favorites = () => {
   // Get Favorites from store
   const favorites = useSelector((state) => state.favorites.value);
 
-  // If no favorites show error toast
+  // If there are no movies in the favorites store show error toast
   const dispatch = useDispatch();
   if (favorites.length < 1) {
     dispatch({
@@ -21,6 +21,7 @@ const Favorites = () => {
     });
   }
 
+  // If there are no movies in the favorites store
   if (favorites.length < 1) {
     return (
       <div className={styles.favorites}>
@@ -32,7 +33,7 @@ const Favorites = () => {
     );
   }
 
-  // If Favorites
+  // If there are movies in the favorites store
   return (
     <div>
       Test
