@@ -14,7 +14,7 @@ import Paragraph from '../../atoms/typography/paragraph/paragraph';
 import DropdownParagraph from '../../molecules/dropdown-paragraph/dropdown-paragraph';
 
 const MovieSection = ({
-  className, movieObj, dropDown, removeFromFavoritesBtn, divider,
+  className, movieObj, dropDown, removeFromFavoritesBtn, showBackBtn, divider,
 }) => {
   const {
     Poster, Title, Genre, Plot, Ratings, imdbID,
@@ -49,9 +49,11 @@ const MovieSection = ({
 
   return (
     <div className={styles['movie-section']}>
+      {showBackBtn && (
       <ButtonBack to="/">
         Back
       </ButtonBack>
+      )}
       <div className={`${className} ${styles['movie-section__container']}`}>
         <div className={styles['movie-section__image-container']}>
           {removeFromFavoritesBtn ? (
@@ -106,6 +108,7 @@ MovieSection.propTypes = {
   className: PropTypes.string,
   dropDown: PropTypes.bool,
   removeFromFavoritesBtn: PropTypes.bool,
+  showBackBtn: PropTypes.bool,
   divider: PropTypes.bool,
 };
 
@@ -113,6 +116,7 @@ MovieSection.defaultProps = {
   className: '',
   dropDown: false,
   removeFromFavoritesBtn: false,
+  showBackBtn: true,
   divider: false,
 };
 
