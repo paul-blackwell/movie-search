@@ -37,12 +37,13 @@ const Favorites = () => {
   // If there are movies in the favorites store
   return (
     <div className={styles.favorites}>
-      {favorites.map((favorite) => (
+      {favorites.map((favorite, index) => (
         <MovieSection
           key={favorite.imdbID}
           movieObj={favorite}
           dropDown
           removeFromFavoritesBtn
+          showBackBtn={index === 0}
           divider
         />
       ))}
