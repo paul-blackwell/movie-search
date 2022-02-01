@@ -4,14 +4,14 @@ import { v4 as uuid } from 'uuid';
 import styles from './select.module.scss';
 
 const Select = ({
-  id, className, value, handleChange, options,
+  id, className, value, onChange, options,
 }) => (
   <div className={styles.select}>
     <select
       id={id}
       className={`${className} ${styles.select__select}`}
       value={value}
-      onChange={handleChange}
+      onChange={onChange}
     >
       {options.map((option) => (
         <option
@@ -33,7 +33,7 @@ Select.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]).isRequired,
-  handleChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.node).isRequired,
 };
 

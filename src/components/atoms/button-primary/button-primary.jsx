@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import styles from './button-primary.module.scss';
 
 const ButtonPrimary = ({
-  className, children, handleClick, icon, fullWidthOnMobile,
+  className, children, onClick, icon, fullWidthOnMobile,
 }) => (
   <button
     type="button"
-    onClick={handleClick}
+    onClick={onClick}
     className={`${className} ${styles['button-primary']} ${fullWidthOnMobile ? styles['button-primary--full-width-on-mobile'] : ''}`}
   >
     {icon}
@@ -18,7 +18,7 @@ const ButtonPrimary = ({
 ButtonPrimary.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   icon: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.node,
