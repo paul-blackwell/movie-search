@@ -22,12 +22,40 @@ const Search = ({ className }) => {
     setSelectValue('movie');
   };
 
+  // This will handle our input validation
+  const validatedInput = (input) => {
+    if (input === '') return { valid: false, errorMessage: 'Please enter a movie' };
+    return { valid: true, errorMessage: '' };
+  };
+
+  // This will handle our form submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(' was fired');
+    console.log(validatedInput(inputValue));
+
+    // Validate input value, if not valid update search store
+    if (!validatedInput(inputValue).valid) {
+      console.log('Search store updated');
+    }
+
+    // Get query string
+    // const query = `http://www.omdbapi.com/?apikey=[yourkey]&s=${inputValue}`;
+
+    // Make request to the api
+
+    // Navigate to the Browse page if not a ready on that page
+
+    // Update search store
+  };
+
   // Just for testing
-  useEffect(() => { console.log(inputValue); }, [inputValue]);
-  useEffect(() => { console.log(selectValue); }, [selectValue]);
+  // useEffect(() => { console.log(inputValue); }, [inputValue]);
+  // useEffect(() => { console.log(selectValue); }, [selectValue]);
 
   return (
-    <div className={`${styles.search} ${className}`}>
+    <form className={`${styles.search} ${className}`}>
       <InputWithLabel
         className={styles.search__input}
         type="text"
@@ -55,9 +83,11 @@ const Search = ({ className }) => {
         >
           Clear
         </ButtonTertiary>
-        <ButtonPrimary onClick={() => console.log('Button primary was clicked')}>Search</ButtonPrimary>
+        <ButtonPrimary onClick={handleSubmit}>
+          Search
+        </ButtonPrimary>
       </div>
-    </div>
+    </form>
   );
 };
 
