@@ -9,14 +9,14 @@ const SelectWithLabel = ({
   label,
   options,
   value,
-  handleChange,
+  onChange,
 }) => {
   const selectId = uuid();
 
   return (
     <div className={`${className} ${styles['select-with-label']}`}>
       <label htmlFor={selectId} className={styles['select-with-label__label']}>{label}</label>
-      <Select id={selectId} value={value} handleChange={handleChange} options={options} />
+      <Select id={selectId} value={value} onChange={onChange} options={options} />
     </div>
   );
 };
@@ -26,7 +26,7 @@ SelectWithLabel.propTypes = {
   label: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.node).isRequired,
   value: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 SelectWithLabel.defaultProps = {
