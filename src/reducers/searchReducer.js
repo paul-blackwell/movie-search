@@ -3,7 +3,7 @@ import { setSearch } from '../actions/searchActions';
 
 const initialState = {
   currentSearch: {
-    isValidSearch: false,
+    isValidSearch: null,
     errorMessage: '',
     query: '',
   },
@@ -17,7 +17,7 @@ const searchReducer = createReducer(initialState, (builder) => {
 
       // If not a valid search don't make API request but just return updated state
       if (!isValidSearch) {
-        state.currentlySelectedMovie = {
+        state.currentSearch = {
           isValidSearch,
           errorMessage,
           query: '',

@@ -7,7 +7,19 @@ import MovieSection from '../../organisms/movie-section/movie-section';
 const SearchResults = () => {
   // Get search store
   const currentSearch = useSelector((state) => state.search.currentSearch);
-  console.log(currentSearch);
+
+  // If not a valid search show error toast
+  const dispatch = useDispatch();
+  if (!currentSearch.isValidSearch) {
+    dispatch({
+      type: 'SHOW_TOAST',
+      payload: {
+        display: true,
+        message: currentSearch.errorMessage,
+        type: 'error',
+      },
+    });
+  }
 
   return (
     <div>
