@@ -7,13 +7,13 @@ const initialState = {
     errorMessage: '',
     query: '',
   },
-  movies: [],
+  results: [],
 };
 
-const moviesReducer = createReducer(initialState, (builder) => {
+const searchReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(setSearch, (state, action) => {
-      const { isValidSearch, errorMessage, query } = action.currentSearch;
+      const { isValidSearch, errorMessage, query } = action.payload.currentSearch;
 
       // If not a valid search don't make API request but just return updated state
       if (!isValidSearch) {
@@ -22,9 +22,9 @@ const moviesReducer = createReducer(initialState, (builder) => {
           errorMessage,
           query: '',
         };
-        state.movies = [];
+        state.results = [];
       }
     });
 });
 
-export default moviesReducer;
+export default searchReducer;
