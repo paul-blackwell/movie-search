@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
 import styles from './search.module.scss';
 import InputWithLabel from '../../molecules/input-with-label/input-with-label';
@@ -15,6 +17,12 @@ const Search = ({ className }) => {
   // This will handle our select state and change
   const [selectValue, setSelectValue] = useState('movie');
   const handleSelectChange = (e) => setSelectValue(e.target.value);
+
+  // Get current route
+  const currentRoute = useLocation().pathname;
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // This will handle clearing our search
   const handleClear = () => {
@@ -32,12 +40,25 @@ const Search = ({ className }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(' was fired');
-    console.log(validatedInput(inputValue));
+    const { valid, errorMessage } = validatedInput(inputValue);
 
     // Validate input value, if not valid update search store
-    if (!validatedInput(inputValue).valid) {
-      console.log('Search store updated');
+    if (!valid) {
+      dispatch({
+        type: 'SET_SEARCH',
+        payload: {
+          currentSearch: {
+            isValidSearch: valid,
+            errorMessage,
+            query: '',
+          },
+        },
+      });
+
+      // If not already on the search page navigate to it
+      if (currentRoute !== '/search-results') {
+        navigate('/search-results');
+      }
     }
 
     // Get query string
