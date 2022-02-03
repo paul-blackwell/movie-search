@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ButtonBack from '../../atoms/button-back/button-back';
 import SecondaryHeading from '../../atoms/typography/secondary-heading/secondary-heading';
-import MovieSection from '../../organisms/movie-section/movie-section';
 
 const SearchResults = () => {
   // Get search store
@@ -19,6 +18,42 @@ const SearchResults = () => {
         type: 'error',
       },
     });
+  }
+
+  // User has navigated to the page and there is no data in currentSearch some info toast
+  if (currentSearch.isValidSearch === null) {
+    dispatch({
+      type: 'SHOW_TOAST',
+      payload: {
+        display: true,
+        message: 'Search for movies using the form at the top of the page',
+        type: 'default',
+      },
+    });
+  }
+
+  // User has navigated to the page and there is no data in currentSearch
+  if (currentSearch.isValidSearch === null) {
+    return (
+      <div>
+        <ButtonBack to="/">
+          Back
+        </ButtonBack>
+        <SecondaryHeading>Start searching for movies</SecondaryHeading>
+      </div>
+    );
+  }
+
+  // User has navigated to the page and there is no data in currentSearch
+  if (!currentSearch.isValidSearch) {
+    return (
+      <div>
+        <ButtonBack to="/">
+          Back
+        </ButtonBack>
+        <SecondaryHeading>Please enter a valid search</SecondaryHeading>
+      </div>
+    );
   }
 
   return (

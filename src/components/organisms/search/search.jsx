@@ -61,19 +61,15 @@ const Search = ({ className }) => {
       }
     }
 
-    // Get query string
-    // const query = `http://www.omdbapi.com/?apikey=[yourkey]&s=${inputValue}`;
-
-    // Make request to the api
-
-    // Navigate to the Browse page if not a ready on that page
-
-    // Update search store
+    /**
+     * TODO:
+     * - Make query string
+     * - Make request to the api
+     * - Update search store
+     * - Navigate to the Browse page if not a ready on that page
+     * - Clear the form
+     */
   };
-
-  // Just for testing
-  // useEffect(() => { console.log(inputValue); }, [inputValue]);
-  // useEffect(() => { console.log(selectValue); }, [selectValue]);
 
   return (
     <form className={`${styles.search} ${className}`}>
