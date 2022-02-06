@@ -25,11 +25,14 @@ const Search = ({ className }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // This will handle clearing our search
-  const handleClear = () => {
+  // This will clear our search form
+  const clearForm = () => {
     setInputValue('');
     setSelectValue('movie');
   };
+
+  // This clearing our search when the clear button is clicked
+  const handleClear = () => clearForm();
 
   // This will handle our input validation
   const validatedInput = (input) => {
@@ -42,6 +45,7 @@ const Search = ({ className }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Run our input validation
     const { valid, errorMessage } = validatedInput(inputValue);
 
     // Validate input value, if not valid update search store
@@ -56,21 +60,24 @@ const Search = ({ className }) => {
           },
         },
       });
-
-      // If not already on the search page navigate to it
-      if (currentRoute !== '/search-results') {
-        navigate('/search-results');
-      }
     }
 
     /**
-     * TODO:
+     * TODO - if valid search:
      * - Make query string
      * - Make request to the api
      * - Update search store
      * - Navigate to the Browse page if not a ready on that page
      * - Clear the form
      */
+
+    // clear the form
+    clearForm();
+
+    // If not already on the search page navigate to it
+    if (currentRoute !== '/search-results') {
+      navigate('/search-results');
+    }
   };
 
   return (
@@ -102,7 +109,7 @@ const Search = ({ className }) => {
         >
           Clear
         </ButtonTertiary>
-        <ButtonPrimary onClick={handleSubmit}>
+        <ButtonPrimary type="submit" onClick={handleSubmit}>
           Search
         </ButtonPrimary>
       </div>
