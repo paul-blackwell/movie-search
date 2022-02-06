@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
 import styles from './search.module.scss';
+import containsSpecialChars from '../../../utils/containsSpecialChars';
 import InputWithLabel from '../../molecules/input-with-label/input-with-label';
 import SelectWithLabel from '../../molecules/select-with-label/select-with-label';
 import ButtonPrimary from '../../atoms/button-primary/button-primary';
@@ -24,15 +25,19 @@ const Search = ({ className }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // This will handle clearing our search
-  const handleClear = () => {
+  // This will clear our search form
+  const clearForm = () => {
     setInputValue('');
     setSelectValue('movie');
   };
 
+  // This clearing our search when the clear button is clicked
+  const handleClear = () => clearForm();
+
   // This will handle our input validation
   const validatedInput = (input) => {
     if (input === '') return { valid: false, errorMessage: 'Please enter a movie' };
+    if (containsSpecialChars(input)) return { valid: false, errorMessage: 'Movie must not have special characters' };
     return { valid: true, errorMessage: '' };
   };
 
@@ -40,6 +45,7 @@ const Search = ({ className }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Run our input validation
     const { valid, errorMessage } = validatedInput(inputValue);
 
     // Validate input value, if not valid update search store
@@ -54,26 +60,25 @@ const Search = ({ className }) => {
           },
         },
       });
-
-      // If not already on the search page navigate to it
-      if (currentRoute !== '/search-results') {
-        navigate('/search-results');
-      }
     }
 
-    // Get query string
-    // const query = `http://www.omdbapi.com/?apikey=[yourkey]&s=${inputValue}`;
+    /**
+     * TODO - if valid search:
+     * - Make query string
+     * - Make request to the api
+     * - Update search store
+     * - Navigate to the Browse page if not a ready on that page
+     * - Clear the form
+     */
 
-    // Make request to the api
+    // clear the form
+    clearForm();
 
-    // Navigate to the Browse page if not a ready on that page
-
-    // Update search store
+    // If not already on the search page navigate to it
+    if (currentRoute !== '/search-results') {
+      navigate('/search-results');
+    }
   };
-
-  // Just for testing
-  // useEffect(() => { console.log(inputValue); }, [inputValue]);
-  // useEffect(() => { console.log(selectValue); }, [selectValue]);
 
   return (
     <form className={`${styles.search} ${className}`}>
@@ -104,7 +109,7 @@ const Search = ({ className }) => {
         >
           Clear
         </ButtonTertiary>
-        <ButtonPrimary onClick={handleSubmit}>
+        <ButtonPrimary type="submit" onClick={handleSubmit}>
           Search
         </ButtonPrimary>
       </div>
