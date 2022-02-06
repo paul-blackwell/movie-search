@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
 import styles from './search.module.scss';
+import containsSpecialChars from '../../../utils/containsSpecialChars';
 import InputWithLabel from '../../molecules/input-with-label/input-with-label';
 import SelectWithLabel from '../../molecules/select-with-label/select-with-label';
 import ButtonPrimary from '../../atoms/button-primary/button-primary';
@@ -33,6 +34,7 @@ const Search = ({ className }) => {
   // This will handle our input validation
   const validatedInput = (input) => {
     if (input === '') return { valid: false, errorMessage: 'Please enter a movie' };
+    if (containsSpecialChars(input)) return { valid: false, errorMessage: 'Movie must not have special characters' };
     return { valid: true, errorMessage: '' };
   };
 
