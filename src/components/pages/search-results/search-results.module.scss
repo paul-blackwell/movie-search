@@ -5,6 +5,7 @@
 
   &__heading-span {
     @include text-3xl;
+    margin-left: 1rem;
 
     @include respond(lg) {
       @include text-5xl;
