@@ -6,6 +6,8 @@ const initialState = {
     isValidSearch: null,
     errorMessage: '',
     query: '',
+    search: '',
+    type: '',
   },
   results: [],
 };
@@ -13,7 +15,9 @@ const initialState = {
 const searchReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(setSearch, (state, action) => {
-      const { isValidSearch, errorMessage, query } = action.payload.currentSearch;
+      const {
+        isValidSearch, errorMessage, query, search, type,
+      } = action.payload.currentSearch;
 
       // If not a valid search don't make API request but just return updated state
       if (!isValidSearch) {
@@ -21,6 +25,20 @@ const searchReducer = createReducer(initialState, (builder) => {
           isValidSearch,
           errorMessage,
           query: '',
+          search: '',
+          type: '',
+        };
+        state.results = [];
+      }
+
+      // Is valid search
+      if (isValidSearch) {
+        state.currentSearch = {
+          isValidSearch,
+          errorMessage,
+          query,
+          search,
+          type,
         };
         state.results = [];
       }

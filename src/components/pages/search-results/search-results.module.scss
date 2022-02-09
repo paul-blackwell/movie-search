@@ -1,0 +1,13 @@
+@import "../../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/variables";
+
+.search-results {
+
+  &__heading-span {
+    @include text-3xl;
+
+    @include respond(lg) {
+      @include text-5xl;
+    }
+  }
+}
