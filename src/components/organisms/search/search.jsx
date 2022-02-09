@@ -57,6 +57,8 @@ const Search = ({ className }) => {
             isValidSearch: valid,
             errorMessage,
             query: '',
+            search: '',
+            type: '',
           },
         },
       });
@@ -70,6 +72,20 @@ const Search = ({ className }) => {
      * - Navigate to the Browse page if not a ready on that page
      * - Clear the form
      */
+    if (valid) {
+      dispatch({
+        type: 'SET_SEARCH',
+        payload: {
+          currentSearch: {
+            isValidSearch: valid,
+            errorMessage,
+            query: inputValue,
+            search: inputValue,
+            type: selectValue,
+          },
+        },
+      });
+    }
 
     // clear the form
     clearForm();

@@ -2,6 +2,10 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ButtonBack from '../../atoms/button-back/button-back';
 import SecondaryHeading from '../../atoms/typography/secondary-heading/secondary-heading';
+import styles from './search-results.module.scss';
+
+// Just for testing
+import defaultMovies from '../../../data/default-movies';
 
 const SearchResults = () => {
   // Get search store
@@ -52,6 +56,21 @@ const SearchResults = () => {
           Back
         </ButtonBack>
         <SecondaryHeading>Please enter a valid search</SecondaryHeading>
+      </div>
+    );
+  }
+
+  // Is a valid search
+  if (currentSearch.isValidSearch) {
+    return (
+      <div className={styles['search-results']}>
+        <ButtonBack to="/">
+          Back
+        </ButtonBack>
+        <SecondaryHeading>
+          This is what we found for
+          <span className={styles['search-results__heading-span']}>&quot;Alien&quot;</span>
+        </SecondaryHeading>
       </div>
     );
   }
