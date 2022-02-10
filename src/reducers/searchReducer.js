@@ -5,7 +5,6 @@ const initialState = {
   currentSearch: {
     isValidSearch: null,
     errorMessage: '',
-    query: '',
     search: '',
     type: '',
   },

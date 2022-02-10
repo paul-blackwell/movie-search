@@ -57,21 +57,13 @@ const Search = ({ className }) => {
             isValidSearch: valid,
             errorMessage,
             query: '',
-            search: '',
             type: '',
           },
         },
       });
     }
 
-    /**
-     * TODO - if valid search:
-     * - Make query string
-     * - Make request to the api
-     * - Update search store
-     * - Navigate to the Browse page if not a ready on that page
-     * - Clear the form
-     */
+    // if valid search:
     if (valid) {
       dispatch({
         type: 'SET_SEARCH',
@@ -79,7 +71,6 @@ const Search = ({ className }) => {
           currentSearch: {
             isValidSearch: valid,
             errorMessage,
-            query: inputValue,
             search: inputValue,
             type: selectValue,
           },
