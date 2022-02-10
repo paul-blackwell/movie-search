@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import styles from './search-results.module.scss';
 import ButtonBack from '../../atoms/button-back/button-back';
 import SecondaryHeading from '../../atoms/typography/secondary-heading/secondary-heading';
-import styles from './search-results.module.scss';
+import Card from '../../molecules/card/card';
 
 // Just for testing
 import defaultMovies from '../../../data/default-movies';
@@ -39,7 +40,7 @@ const SearchResults = () => {
   // User has navigated to the page and there is no data in currentSearch
   if (currentSearch.isValidSearch === null) {
     return (
-      <div>
+      <div className={styles['search-results']}>
         <ButtonBack to="/">
           Back
         </ButtonBack>
@@ -51,7 +52,7 @@ const SearchResults = () => {
   // User has navigated to the page and there is no data in currentSearch
   if (!currentSearch.isValidSearch) {
     return (
-      <div>
+      <div className={styles['search-results']}>
         <ButtonBack to="/">
           Back
         </ButtonBack>
@@ -67,10 +68,15 @@ const SearchResults = () => {
         <ButtonBack to="/">
           Back
         </ButtonBack>
-        <SecondaryHeading>
+        <SecondaryHeading className={styles['search-results__heading']}>
           This is what we found for
           <span className={styles['search-results__heading-span']}>&quot;Alien&quot;</span>
         </SecondaryHeading>
+        <div className={styles['search-results__cards']}>
+          {defaultMovies.popular.map((movie) => (
+            <Card movie={movie} basic />
+          ))}
+        </div>
       </div>
     );
   }
