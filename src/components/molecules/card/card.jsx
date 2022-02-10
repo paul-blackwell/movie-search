@@ -10,9 +10,9 @@ import SecondaryHeading from '../../atoms/typography/secondary-heading/secondary
 import Paragraph from '../../atoms/typography/paragraph/paragraph';
 import truncate from '../../../utils/truncate';
 
-const Card = ({ className, movie }) => {
+const Card = ({ className, movie, basic }) => {
   const {
-    Title, Poster, Genre, Ratings, imdbID,
+    Title, Poster, Genre, Ratings, Year, imdbID,
   } = movie;
 
   const dispatch = useDispatch();
@@ -28,9 +28,23 @@ const Card = ({ className, movie }) => {
       <div className={styles['card__image-container']}>
         <StandardImage src={Poster} alt={Title} />
       </div>
-      <MovieScore score={getMovieScore(Ratings)} />
-      <SecondaryHeading>{truncate(Title, 20)}</SecondaryHeading>
-      <Paragraph>{Genre}</Paragraph>
+      { basic ? (
+        <>
+          <SecondaryHeading>{truncate(Title, 20)}</SecondaryHeading>
+          <Paragraph>
+            Year:
+            {' '}
+            {Year}
+          </Paragraph>
+        </>
+      ) : (
+        <>
+          <MovieScore score={getMovieScore(Ratings)} />
+          <SecondaryHeading>{truncate(Title, 20)}</SecondaryHeading>
+          <Paragraph>{Genre}</Paragraph>
+        </>
+      )}
+
     </div>
   );
 };
@@ -38,10 +52,12 @@ const Card = ({ className, movie }) => {
 Card.propTypes = {
   className: PropTypes.string,
   movie: PropTypes.shape.isRequired,
+  basic: PropTypes.bool,
 };
 
 Card.defaultProps = {
   className: '',
+  basic: false,
 };
 
 export default Card;

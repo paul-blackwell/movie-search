@@ -2,6 +2,21 @@
 @import "../../../styles/abstracts/variables";
 
 .search-results {
+  margin: 2.25rem 0;
+  padding: 0 1.25rem;
+
+  @include respond(lg) {
+     margin:  0;
+     padding: 0;
+  }
+
+  &__heading {
+    margin-bottom: 	2.25rem;
+
+    @include respond(lg) {
+      margin-bottom: 3.5rem;
+    }
+  }
 
   &__heading-span {
     @include text-3xl;
@@ -10,5 +25,11 @@
     @include respond(lg) {
       @include text-5xl;
     }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 1rem;
   }
 }
