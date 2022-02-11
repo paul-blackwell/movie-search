@@ -44,14 +44,13 @@ const Card = ({ className, movie, basic }) => {
           <Paragraph>{Genre}</Paragraph>
         </>
       )}
-
     </div>
   );
 };
 
 Card.propTypes = {
   className: PropTypes.string,
-  movie: PropTypes.shape.isRequired,
+  movie: PropTypes.object.isRequired,
   basic: PropTypes.bool,
 };
 

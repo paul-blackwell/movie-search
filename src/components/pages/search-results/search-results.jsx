@@ -11,6 +11,7 @@ import defaultMovies from '../../../data/default-movies';
 const SearchResults = () => {
   // Get search store
   const currentSearch = useSelector((state) => state.search.currentSearch);
+  const { search } = currentSearch;
 
   // If not a valid search show error toast
   const dispatch = useDispatch();
@@ -70,11 +71,15 @@ const SearchResults = () => {
         </ButtonBack>
         <SecondaryHeading className={styles['search-results__heading']}>
           This is what we found for
-          <span className={styles['search-results__heading-span']}>&quot;Alien&quot;</span>
+          <span className={styles['search-results__heading-span']}>
+            &quot;
+            {search}
+            &quot;
+          </span>
         </SecondaryHeading>
         <div className={styles['search-results__cards']}>
           {defaultMovies.popular.map((movie) => (
-            <Card movie={movie} basic />
+            <Card movie={movie} basic key={movie.imdbID} />
           ))}
         </div>
       </div>
