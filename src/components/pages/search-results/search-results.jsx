@@ -3,10 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import styles from './search-results.module.scss';
 import ButtonBack from '../../atoms/button-back/button-back';
 import SecondaryHeading from '../../atoms/typography/secondary-heading/secondary-heading';
-import Card from '../../molecules/card/card';
-
-// Just for testing
-import defaultMovies from '../../../data/default-movies';
 
 const SearchResults = () => {
   // Get search store
