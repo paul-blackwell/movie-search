@@ -56,7 +56,7 @@ const Search = ({ className }) => {
           currentSearch: {
             isValidSearch: valid,
             errorMessage,
-            query: '',
+            search: '',
             type: '',
           },
         },
