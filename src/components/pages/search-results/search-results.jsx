@@ -69,13 +69,12 @@ const SearchResults = () => {
           Back
         </ButtonBack>
         <SecondaryHeading className={styles['search-results__heading']}>
+          {/* Just a placeholder */}
           This is what we found for
           <span className={styles['search-results__heading-span']}>&quot;Alien&quot;</span>
         </SecondaryHeading>
         <div className={styles['search-results__cards']}>
-          {defaultMovies.popular.map((movie) => (
-            <Card movie={movie} basic />
-          ))}
+          {/* Render your cards here */}
         </div>
       </div>
     );
